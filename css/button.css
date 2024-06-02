@@ -9,7 +9,7 @@ button {
   background: #016f9b;
   color: #fff;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: lowercase;
   border: none;
   letter-spacing: 0.1rem;
   font-size: 1rem;
