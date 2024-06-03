@@ -6,6 +6,18 @@ let isDrawing = false;
 let x = 0;
 let y = 0;
 
+const characters = [];
+
+// Add numbers 0 to 9
+for (let i = 0; i < 10; i++) {
+    characters.push(String(i));
+}
+
+// Add uppercase letters A to Z
+for (let i = 65; i < 91; i++) {
+    characters.push(String.fromCharCode(i));
+}
+
 canvas.addEventListener('mousedown', (e) => {
     x = e.offsetX;
     y = e.offsetY;
@@ -79,5 +91,5 @@ async function predict() {
     // Make a prediction
     const prediction = await window.myModel.predict(input).data();
     const highestValueIndex = prediction.indexOf(Math.max(...prediction));
-    console.log(highestValueIndex);
+    console.log(characters[highestValueIndex]);
 }
