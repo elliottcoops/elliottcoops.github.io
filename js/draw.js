@@ -22,7 +22,7 @@ canvas.addEventListener('mouseup', () => {
     isDrawing = false;
     x = 0;
     y = 0;
-    predict();
+    predict()
 });
 
 canvas.addEventListener('mouseout', () => {
