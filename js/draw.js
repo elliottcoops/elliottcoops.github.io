@@ -69,5 +69,6 @@ async function predict() {
 
     // Make a prediction
     const prediction = await window.myModel.predict(input).data();
-    console.log(prediction);
+    const highestValueIndex = prediction.indexOf(Math.max(...prediction));
+    console.log(highestValueIndex);
 }
