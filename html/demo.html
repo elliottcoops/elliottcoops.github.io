@@ -4,7 +4,24 @@
   <head>
     <title>about me</title>
     <link rel="stylesheet" href="../css/nav_bar.css" />
-    <link rel="stylesheet" href ="../css/about.css">
+    <link rel="stylesheet" href ="../css/projects.css">
+
+    
+    <style>
+
+        .canvas-container {
+            margin: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+        }
+        canvas {
+          background-color: white;
+            border: 1px solid #000;
+        }
+    </style>
+      
   </head>
 
   <body>
@@ -22,6 +39,12 @@
         <li><a href="../html/links.html">links</a></li>
       </ul>
     </nav>
+
+    <!-- Drawing screen -->
+    <div class="canvas-container">
+      <canvas id="drawingCanvas" width="400" height="400"></canvas>
+    </div>
+    <script src="../js/draw.js"></script>
 
   </body>
 

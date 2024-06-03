@@ -1,7 +1,8 @@
-async function testModel() {
-    const model = await tf.loadLayersModel('../model_js/model.json');
-    console.log('success');
-}
+window.myModel = null;
 
+async function testModel() {
+    window.myModel = await tf.loadLayersModel('../model_js/model.json');
+    console.log("Model loaded into global");
+}
 
 testModel();
