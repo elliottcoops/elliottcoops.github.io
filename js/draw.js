@@ -70,5 +70,5 @@ async function predict() {
     // Make a prediction
     const prediction = await window.myModel.predict(input).data();
     const maxPrediction = Math.max(...prediction);
-    console.log("Prediction:", maxPrediction);
+    console.log("Prediction:", prediction[maxPrediction]);
 }
