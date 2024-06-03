@@ -80,15 +80,10 @@ async function predict() {
 
     // Convert to greyscale and normaliz
             // Convert the image data to a tensor and preprocess it
-    const input = tf.browser.fromPixels(imageData)
+    const input = tf.browser.fromPixels(resizedImageData)
         .toFloat()
         .div(tf.scalar(255))
         .expandDims(0); // Add a batch dimension
-
-    
-
-
-  
 
     // Make a prediction
     const prediction = await window.myModel.predict(input).data();
