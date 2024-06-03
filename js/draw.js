@@ -62,6 +62,21 @@ async function predict() {
     ctx = canvas.getContext('2d');
 
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const imgData = imageData.data;
+
+    // Create an off-screen canvas to resize the image
+    const offScreenCanvas = document.createElement('canvas');
+    offScreenCanvas.width = 64;
+    offScreenCanvas.height = 64;
+    const offScreenCtx = offScreenCanvas.getContext('2d');
+
+    // Draw the captured image data onto the off-screen canvas and resize it
+    offScreenCtx.putImageData(imgData, 0, 0);
+    offScreenCtx.drawImage(canvas, 0, 0, 64, 64);
+
+    // Get the resized image data
+    const resizedImageData = offScreenCtx.getImageData(0, 0, 64, 64);
+
 
     // Convert to greyscale and normaliz
             // Convert the image data to a tensor and preprocess it
@@ -72,21 +87,8 @@ async function predict() {
 
     
 
-    // // Create an off-screen canvas to resize the image
-    // const offScreenCanvas = document.createElement('canvas');
-    // offScreenCanvas.width = 64;
-    // offScreenCanvas.height = 64;
-    // const offScreenCtx = offScreenCanvas.getContext('2d');
 
-    // // Draw the captured image data onto the off-screen canvas and resize it
-    // offScreenCtx.putImageData(imgData, 0, 0);
-    // offScreenCtx.drawImage(canvas, 0, 0, 64, 64);
-
-    // Get the resized image data
-    // const resizedImageData = offScreenCtx.getImageData(0, 0, 64, 64);
-
-    // Convert the image data to a tensor and preprocess it
-    // console.log(input);
+  
 
     // Make a prediction
     const prediction = await window.myModel.predict(input).data();
