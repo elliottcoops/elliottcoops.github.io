@@ -1,8 +1,8 @@
 .image-container {
+    margin-top: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; /* Full viewport height */
 }
 
 .circular-image {

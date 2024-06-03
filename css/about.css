@@ -12,6 +12,43 @@ body {
     justify-content: center;
     min-height: 100vh; 
   }
+
+  h1{
+    color: white;
+    text-transform: lowercase;
+    letter-spacing: 5px;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+    margin-top: 1%;
+    margin-inline-start: 2%;
+  }
+
+  p{
+    color: white;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 1%;
+    margin-inline-start: 2%;
+  }
+
+  .unorderedList{
+    margin-top: 1%;
+    margin-inline-start: 1%;
+  }
+  .list {
+    /* list-style-type: '>'; */
+    /* padding-inline-start: 1ch; */
+    color: white;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 1%;
+    margin-inline-start: 2%;
+  }
   
   @keyframes gradient {
     0% {
