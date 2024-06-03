@@ -34,6 +34,42 @@ body {
     margin-inline-start: 2%;
   }
 
+  .example-images{
+    display: flex;
+    gap: 10%; /* Space between images */
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .example-images img {
+    width: 30%;
+    height: 25%;
+    /* object-fit: cover; Ensures the image covers the area without distortion */
+}
+
+  .grp-images {
+    display: flex;
+    gap: 10%; /* Space between images */
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .grp1{
+    rotate: -25deg;
+  }
+
+  .grp2{
+    rotate: 25deg;
+  }
+
+  .grp-images img {
+      width: 10%;
+      height: 20%;
+      /* object-fit: cover; Ensures the image covers the area without distortion */
+  }
+
   .unorderedList{
     margin-top: 1%;
     margin-inline-start: 1%;

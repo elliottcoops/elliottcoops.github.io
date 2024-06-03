@@ -2,9 +2,10 @@
 <html lang="en">
 
   <head>
-    <title>about me</title>
+    <title>projects</title>
     <link rel="stylesheet" href="../css/nav_bar.css" />
-    <link rel="stylesheet" href ="../css/about.css">
+    <link rel="stylesheet" href ="../css/projects.css">
+    <link rel="stylesheet" href="../css/profile_picture.css">
   </head>
 
   <body>
@@ -12,7 +13,7 @@
     <!-- Navigation bar -->
     <nav>
       <div class="heading">
-        <h4>elliott website</h4>
+        <h4>projects</h4>
       </div>
       <ul class="nav-links">
         <li><a href="../index.html">home</a></li>
@@ -22,6 +23,68 @@
         <li><a href="../html/links.html">links</a></li>
       </ul>
     </nav>
+
+    <!-- Summary -->
+    <h1> summary </h1>
+    <p> some examples of my favourite personal and academic projects - see my <a href="https://github.com/elliottcoops">github</a> for everything :-)</p>
+    <br>
+
+    <!-- Group project -->
+    <h1>University Group Project - My model Cars</h1>
+    <p>my second year group project involved designing an interactive mobile application to enhance engagement for model car collectors</p>
+    <br>
+    <p>we designed a top trumps style game where users were able to scan a collection of real life model cars and play with them in game</p>
+    <br>
+    <p>being team lead meant that i was leading client meetings, orgainsing sprints and milestones using jira and presenting the final project in front of a room of acadameics and industry leaders</p>
+    <br> 
+
+    <p>The key development areas within the project were:</p>
+    <ul class = "unorderedList">
+      <li class ="list"> <b>unity development:</b> the game was written entirely in unity and then deployed onto iphone</li>
+      <li class ="list"> <b>machine leaning pipeline:</b> we implmented a three stage pipeline (blur detection -> car detection -> car prediction)</li>
+      <li class ="list"> <b>model car collection system:</b> when a user scanned in a model car, it was added to a garage or collection to prevent having to rescan</li>
+      <li class ="list"> <b>uniquely designed 3d models:</b> hand crafted 3d models were designed by us in maya autodesk</li>
+    </ul>
+    <br>
+    
+    <div class="grp-images">
+      <img src="../in-game.png" class = "grp1">
+      <img src="../model.png">
+      <img src="../scan.png" class = "grp2">
+   </div>
+   <br>
+
+   <!-- Neural network from scratch -->
+   <h1>MNIST-Neural-Network</h1>
+   <p>An implementation of training a neural network using backpropagation from scratch</p>
+   <br>
+   <p>The key development features of the project are:</p>
+   <br>
+    <ul class = "unorderedList">
+      <li class ="list"> <b>supports any architecture:</b> the user can select any architecture, i.e. (123,2,3)</li>
+      <li class ="list"> <b>tested using mnist digits:</b> the network was tested using the mnist digits dataset</li>
+      <li class ="list"> <b>entirely in python:</b> the code is implemented entirely in python mainly using numpy for efficient matrix manipulation</li>
+    </ul>
+    <br>
+    
+    <p>Brief code explanation: </p>
+    <br>
+    <ul class = "unorderedList">
+      <li class ="list"> <b>training loop:</b> for n epochs we perform a forward pass (compute activations), calculate loss (mse) and then a backwards pass to calculate gradients and update weights</li>
+      <li class ="list"> <b>backpropagation</b> backpropagation involves computing the gradients of the loss with respect to the weights. These gradients are then used to adjust the weights in an opposite direction to minimise loss</li>
+    </ul>
+    <br>
+
+    <div class="example-images">
+      <img src="../example.png">
+      <img src ="../loss.png">
+   </div>
+    
+   <br>
+   <!-- Summer research project (tbc) -->
+   <h1>Summer research project - Stay tuned...</h1>
+   <br>
+   
 
   </body>
 
