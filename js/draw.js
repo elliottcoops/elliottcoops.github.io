@@ -58,11 +58,8 @@ async function predict() {
         console.log("No loaded model");
     }
 
-    canvas = document.getElementById('drawingCanvas');
-    ctx = canvas.getContext('2d');
-
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const imgData = imageData.data;
+    // Capture the canvas content
+    const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
     // Create an off-screen canvas to resize the image
     const offScreenCanvas = document.createElement('canvas');
@@ -77,9 +74,7 @@ async function predict() {
     // Get the resized image data
     const resizedImageData = offScreenCtx.getImageData(0, 0, 64, 64);
 
-
-    // Convert to greyscale and normaliz
-            // Convert the image data to a tensor and preprocess it
+    // Convert the image data to a tensor and preprocess it
     const input = tf.browser.fromPixels(resizedImageData)
         .toFloat()
         .div(tf.scalar(255))
