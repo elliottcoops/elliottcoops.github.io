@@ -50,16 +50,13 @@ async function predict() {
     ctx = canvas.getContext('2d');
 
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const data = imageData.data;
 
-    // Convert to greyscale and normalize
-    const greyScalePixels = [];
-    for (let i = 0; i < data.length; i += 4) {
-        // Average the RGB values to get the greyscale value
-        const grey = (0.3 * data[i] + 0.59 * data[i + 1] + 0.11*data[i + 2]);
-        const normalised = grey / 255.0;
-        greyScalePixels.push(normalised);
-    }
+    // Convert to greyscale and normaliz
+            // Convert the image data to a tensor and preprocess it
+    const input = tf.browser.fromPixels(imageData)
+        .toFloat()
+        .div(tf.scalar(255))
+        .expandDims(0); // Add a batch dimension
 
     
 
@@ -77,8 +74,6 @@ async function predict() {
     // const resizedImageData = offScreenCtx.getImageData(0, 0, 64, 64);
 
     // Convert the image data to a tensor and preprocess it
-    const input = tf.tensor(greyScalePixels);
-    
     // console.log(input);
 
     // Make a prediction
