@@ -31,7 +31,7 @@
   
     min-height: 8vh;
   
-    background-color: teal;
+    background-color: #016f9b;
   
     font-family: "Montserrat", sans-serif;
   
@@ -41,7 +41,7 @@
   
     color: white;
   
-    text-transform: uppercase;
+    text-transform: lowercase;
   
     letter-spacing: 5px;
   
@@ -89,6 +89,6 @@
   
   .nav-links li a.active {
   
-    background-color: #4caf50;
+    background-color: lightseagreen;
   
   }
