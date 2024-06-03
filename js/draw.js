@@ -48,24 +48,23 @@ async function predict() {
     // Capture the canvas content
     const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-    // Create an off-screen canvas to resize the image
-    const offScreenCanvas = document.createElement('canvas');
-    offScreenCanvas.width = 64;
-    offScreenCanvas.height = 64;
-    const offScreenCtx = offScreenCanvas.getContext('2d');
+    // // Create an off-screen canvas to resize the image
+    // const offScreenCanvas = document.createElement('canvas');
+    // offScreenCanvas.width = 64;
+    // offScreenCanvas.height = 64;
+    // const offScreenCtx = offScreenCanvas.getContext('2d');
 
-    // Draw the captured image data onto the off-screen canvas and resize it
-    offScreenCtx.putImageData(imgData, 0, 0);
-    offScreenCtx.drawImage(canvas, 0, 0, 64, 64);
+    // // Draw the captured image data onto the off-screen canvas and resize it
+    // offScreenCtx.putImageData(imgData, 0, 0);
+    // offScreenCtx.drawImage(canvas, 0, 0, 64, 64);
 
     // Get the resized image data
-    const resizedImageData = offScreenCtx.getImageData(0, 0, 64, 64);
+    // const resizedImageData = offScreenCtx.getImageData(0, 0, 64, 64);
 
     // Convert the image data to a tensor and preprocess it
-    const input = tf.browser.fromPixels(resizedImageData)
+    const input = tf.browser.fromPixels(imgData)
         .toFloat()
         .div(tf.scalar(255))
-        .expandDims(0); // Add a batch dimension
 
     // Make a prediction
     const prediction = await window.myModel.predict(input).data();
