@@ -39,11 +39,10 @@ function drawLine(ctx, x1, y1, x2, y2) {
     ctx.closePath();
 }
 
-async function predict(){
-    if (!window.myModel){
+async function predict() {
+    if (!window.myModel) {
         console.log("No loaded model");
-    } else{
-        console.log("Loaded model");
+        return;
     }
 
     // Capture the canvas content
@@ -69,7 +68,7 @@ async function predict(){
         .expandDims(0); // Add a batch dimension
 
     // Make a prediction
-    const prediction = await window.myGlobalModel.predict(input).data();
+    const prediction = await window.myModel.predict(input).data();
 
     console.log("Prediction:", prediction);
 }
