@@ -4,7 +4,9 @@ body {
     background-color: #022a47;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; 
+    min-height: 100vh;
+    font-family: 'Arial';
+    max-width: 70%;
   }
 
   h1{
@@ -12,7 +14,16 @@ body {
     text-transform: lowercase;
     letter-spacing: 5px;
     font-size: 25px;
-    font-family: 'Courier New', Courier, monospace;
+    /* text-decoration: underline; */
+    margin-top: 5%;
+    margin-inline-start: 2%;
+  }
+
+  h2{
+    color: white;
+    text-transform: lowercase;
+    letter-spacing: 5px;
+    font-size: 20px;
     /* text-decoration: underline; */
     margin-top: 3%;
     margin-inline-start: 2%;
@@ -23,9 +34,9 @@ body {
     text-transform: lowercase;
     letter-spacing: 2px;
     font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
     margin-top: 1%;
     margin-inline-start: 2%;
+    text-align: center;
   }
 
   .unorderedList{
@@ -39,7 +50,6 @@ body {
     text-transform: lowercase;
     letter-spacing: 2px;
     font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
     margin-top: 1%;
     margin-inline-start: 2%;
   }
