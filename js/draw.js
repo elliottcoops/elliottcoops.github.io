@@ -82,5 +82,6 @@ async function predict() {
     // Make a prediction
     const prediction = await window.myModel.predict(input).data();
     const highestValueIndex = prediction.indexOf(Math.max(...prediction));
+    document.getElementById("predictedText").innerHTML = "Predicted: " + characters[highestValueIndex];
     console.log(characters[highestValueIndex]);
 }
