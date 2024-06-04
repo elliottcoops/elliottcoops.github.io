@@ -1,17 +1,11 @@
 body {
-    margin: auto;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    overflow: auto;
-    background: linear-gradient(315deg, rgba(60,132,206,1) 38%, rgb(2, 42, 71) 68%);
-    animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
-    background-attachment: fixed;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; 
-  }
+  margin: auto;
+  overflow: auto;
+  background-color: #022a47;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
+}
 
   h1{
     color: white;
