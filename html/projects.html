@@ -25,65 +25,67 @@
     </nav>
 
     <!-- Summary -->
-    <h1> summary </h1>
-    <p> some examples of my favourite personal and academic projects - see my <a style="color:lightseagreen;" href="https://github.com/elliottcoops">github</a> for everything :-)</p>
-    <br>
+    <div style="display: grid; justify-items: center;">
+      <h1> summary </h1>
+      <p> some examples of my favourite personal and academic projects - see my <a style="color:lightseagreen;" href="https://github.com/elliottcoops">github</a> for everything :-)</p>
+      <br>
 
-    <!-- Group project -->
-    <h1>University Group Project - My model Cars</h1>
-    <p>my second year group project involved designing an interactive mobile application to enhance engagement for model car collectors</p>
-    <br>
-    <p>we designed a top trumps style game where users were able to scan a collection of real life model cars and play with them in game</p>
-    <br>
-    <p>being team lead meant that i was leading client meetings, orgainsing sprints and milestones using jira and presenting the final project in front of a room of acadameics and industry leaders</p>
-    <br> 
+      <!-- Group project -->
+      <h1>University Group Project - My model Cars</h1>
+      <p>my second year group project involved designing an interactive mobile application to enhance engagement for model car collectors
+        we designed a top trumps style game where users were able to scan a collection of real life model cars and play with them in game
+        being team lead meant that i was leading client meetings, orgainsing sprints and milestones using jira and presenting the final 
+        project in front of a room of acadameics and industry leaders</p>
+      <br>
 
-    <p>The key development areas within the project were:</p>
-    <ul class = "unorderedList">
-      <li class ="list"> <b>unity development:</b> the game was written entirely in unity and then deployed onto iphone</li>
-      <li class ="list"> <b>machine leaning pipeline:</b> we implmented a three stage pipeline (blur detection -> car detection -> car prediction)</li>
-      <li class ="list"> <b>model car collection system:</b> when a user scanned in a model car, it was added to a garage or collection to prevent having to rescan</li>
-      <li class ="list"> <b>uniquely designed 3d models:</b> hand crafted 3d models were designed by us in maya autodesk</li>
-    </ul>
-    <br>
-    
-    <div class="grp-images">
-      <img src="../in-game.png" class = "grp1">
-      <img src="../model.png">
-      <img src="../scan.png" class = "grp2">
-   </div>
-   <br>
+      <h2>key development areas </h2>
+      <p> <b>unity development:</b> the game was written entirely in unity and then deployed onto iphone</p>
+      <p> <b>machine leaning pipeline:</b> we implmented a three stage pipeline (blur detection -> car detection -> car prediction)</p>
+      <p> <b>model car collection system:</b> when a user scanned in a model car, it was added to a garage or collection to prevent having to rescan</p>
+      <p> <b>uniquely designed 3d models:</b> hand crafted 3d models were designed by us in maya autodesk </p>
+      <br>
 
-   <!-- Neural network from scratch -->
-   <h1>MNIST-Neural-Network</h1>
-   <p>An implementation of training a neural network using backpropagation from scratch</p>
-   <br>
-   <p>The key development features of the project are:</p>
-   <br>
-    <ul class = "unorderedList">
-      <li class ="list"> <b>supports any architecture:</b> the user can select any architecture, i.e. (123,2,3)</li>
-      <li class ="list"> <b>tested using mnist digits:</b> the network was tested using the mnist digits dataset</li>
-      <li class ="list"> <b>entirely in python:</b> the code is implemented entirely in python mainly using numpy for efficient matrix manipulation</li>
-    </ul>
-    <br>
-    
-    <p>Brief code explanation: </p>
-    <br>
-    <ul class = "unorderedList">
-      <li class ="list"> <b>training loop:</b> for n epochs we perform a forward pass (compute activations), calculate loss (mse) and then a backwards pass to calculate gradients and update weights</li>
-      <li class ="list"> <b>backpropagation</b> backpropagation involves computing the gradients of the loss with respect to the weights. These gradients are then used to adjust the weights in an opposite direction to minimise loss</li>
-    </ul>
-    <br>
+      <!-- Images go here -->
+      <div class="image-container">
+        <img src="../in-game.png" width="300" height="300" style="width: 100%;">
+        <img src="../model.png" width="300" height="300" style="width: 100%;">
+        <img src="../scan.png" width="300" height="300" style="width: 100%;">
 
-    <div class="example-images">
-      <img src="../example.png">
-      <img src ="../loss.png">
-   </div>
-    
+      </div>
+
+      <!-- Neural network from scratch -->
+      <h1>MNIST-Neural-Network</h1>
+      <p>An implementation of training a neural network using backpropagation from scratch</p>
+      <br>
+      <h2>Key development features</h2>
+      <p> <b>supports any architecture:</b> the user can select any architecture, i.e. (123,2,3)</p>
+      <p> <b>tested using mnist digits:</b> the network was tested using the mnist digits dataset</p>
+      <p> <b>entirely in python:</b> the code is implemented entirely in python mainly using numpy for efficient matrix manipulation</p>
+      <br>
+
+      <h2>Training</h2>
+      
+      <p>The main training loop runs for a specified number of epochs. For each epoch, a forward pass is performed through the network to compute the weighted inputs (Z) and activations (A)
+         for each layer. The loss is then computed using the mean squared error loss function for both the training and validation datasets. Following this, a backward pass is executed to calculate
+          the gradients and update the weights of the network.</p>
+
+      <p> Backpropagation involves computing the gradients of the loss with respect to the weights. These gradients are then used to adjust the weights in the opposite direction to minimize the loss.</p>
+      
+      <br> 
+      <div class="image-container">
+        <img src="../loss.png" width="500" height="400" style="width: 100%;">
+      </div>
+
+      <h2>results</h2>
+      <div class="image-container">
+        <img src="../example.png" width="700" height="400" style="width: 100%;">
+      </div>
+
    <br>
    <!-- Summer research project (tbc) -->
    <h1>Summer research project - Stay tuned...</h1>
    <br>
+   </div>
    
 
   </body>
