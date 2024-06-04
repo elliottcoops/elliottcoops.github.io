@@ -1,59 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-  <head>
-    <title>about me</title>
-    <link rel="stylesheet" href="../css/nav_bar.css" />
-    <link rel="stylesheet" href ="../css/projects.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2"></script>
-    <script type="module" src="../js/model.js"></script>
-
-    
-    <style>
-
-        .canvas-container {
-            margin: 5%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          
-        }
-    
-        #drawingCanvas {
-            width: 320px;  /* Displayed width */
-            height: 320px; /* Displayed height */
-            image-rendering: pixelated; /* Keeps the pixels sharp */
-            border: 1px solid black; /* Optional: border for visual clarity */
-        }
-
-    </style>
+    <head>
+      <title>about me</title>
+      <link rel="stylesheet" href="../css/nav_bar.css" />
+      <link rel="stylesheet" href ="../css/projects.css">
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2"></script>
+      <script type="module" src="../js/model.js"></script>
 
       
-  </head>
+      <style>
 
-  <body>
+          .canvas-container {
+              display: flex;
+              margin-top: 1%;
+              justify-content: center;
+              align-items: center;
+            
+          }
+      
+          #drawingCanvas {
+              width: 320px;  /* Displayed width */
+              height: 320px; /* Displayed height */
+              image-rendering: pixelated; /* Keeps the pixels sharp */
+              border: 1px solid black; /* Optional: border for visual clarity */
+          }
 
-    <!-- Navigation bar -->
-    <nav>
-      <div class="heading">
-        <h4>demo</h4>
+          .clearBtn{
+            width: 160px;
+            height: 50px;
+          }
+
+      </style>
+
+        
+    </head>
+
+    <body>
+
+      <!-- Navigation bar -->
+      <nav>
+        <div class="heading">
+          <h4>demo</h4>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html">home</a></li>
+          <li><a href="../html/projects.html">projects</a></li>
+          <li><a href="about.html">about me</a></li>
+          <li><a class="active" href="../html/demo.html">demo</a></li>
+          <li><a href="../html/links.html">links</a></li>
+        </ul>
+      </nav>
+
+      <!-- Title -->
+      <h1>character recognition</h1>
+      <h2> How to use </h2>
+      <p>Draw a character 0-9 or a-z and let the model predict</p>
+
+      <!-- Drawing screen -->
+      <div class="canvas-container" >
+        <canvas id="drawingCanvas" width="64" height="64" ></canvas>
+        <p>Prediction: </p>
       </div>
-      <ul class="nav-links">
-        <li><a href="../index.html">home</a></li>
-        <li><a href="../html/projects.html">projects</a></li>
-        <li><a href="about.html">about me</a></li>
-        <li><a class="active" href="../html/demo.html">demo</a></li>
-        <li><a href="../html/links.html">links</a></li>
-      </ul>
-    </nav>
+      <script src="../js/draw.js"></script>
 
-    <!-- Drawing screen -->
-    <p id ="predictedText">Predicted: </p>
-    <div class="canvas-container">
-      <canvas id="drawingCanvas" width="64" height="64" ></canvas>
-    </div>
-    <script src="../js/draw.js"></script>
+      <div class="canvas-container" >
+        <button onclick="clearCanvas()" class="clearBtn">Clear</button>
+      </div>
 
-  </body>
+    </body>
 
-</html>
+  </html>

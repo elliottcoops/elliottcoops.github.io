@@ -65,6 +65,11 @@ function drawLine(ctx, x1, y1, x2, y2) {
     ctx.closePath();
 }
 
+function clearCanvas(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
 async function predict() {
     if (!window.myModel) {
         console.log("No loaded model");

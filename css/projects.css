@@ -24,6 +24,17 @@ body {
     margin-inline-start: 2%;
   }
 
+  h2{
+    color: white;
+    text-transform: lowercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    /* text-decoration: underline; */
+    margin-top: 3%;
+    margin-inline-start: 2%;
+  }
+
   p{
     color: white;
     text-transform: lowercase;
