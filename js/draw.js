@@ -48,7 +48,7 @@ function drawLine(ctx, x1, y1, x2, y2) {
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
     ctx.strokeStyle = '#000';
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 35;
     ctx.stroke();
     ctx.closePath();
 }
