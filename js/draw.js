@@ -1,5 +1,6 @@
 canvas = document.getElementById('drawingCanvas');
 ctx = canvas.getContext('2d');
+const scale = 320 / 64; // Scale factor between displayed size and actual canvas size
 ctx.fillStyle = 'white';
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 let isDrawing = false;
@@ -18,17 +19,28 @@ for (let i = 65; i < 91; i++) {
     characters.push(String.fromCharCode(i));
 }
 
+function getScaledCoordinates(event) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+        x: (event.clientX - rect.left) / scale,
+        y: (event.clientY - rect.top) / scale
+    };
+}
+
 canvas.addEventListener('mousedown', (e) => {
-    x = e.offsetX;
-    y = e.offsetY;
+    const coords = getScaledCoordinates(e);
+    x = coords.x;
+    y = coords.y;
     isDrawing = true;
 });
 
+
 canvas.addEventListener('mousemove', (e) => {
     if (isDrawing) {
-        drawLine(ctx, x, y, e.offsetX, e.offsetY);
-        x = e.offsetX;
-        y = e.offsetY;
+        const coords = getScaledCoordinates(e);
+        drawLine(ctx, x, y, coords.x, coords.y);
+        x = coords.x;
+        y = coords.y;
     }
 });
 
@@ -36,7 +48,7 @@ canvas.addEventListener('mouseup', () => {
     isDrawing = false;
     x = 0;
     y = 0;
-    predict()
+    predict();
 });
 
 canvas.addEventListener('mouseout', () => {
@@ -48,7 +60,7 @@ function drawLine(ctx, x1, y1, x2, y2) {
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
     ctx.strokeStyle = '#000';
-    ctx.lineWidth = 35;
+    ctx.lineWidth = 4;
     ctx.stroke();
     ctx.closePath();
 }
@@ -60,22 +72,9 @@ async function predict() {
 
     // Capture the canvas content
     const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-    // Create an off-screen canvas to resize the image
-    const offScreenCanvas = document.createElement('canvas');
-    offScreenCanvas.width = 64;
-    offScreenCanvas.height = 64;
-    const offScreenCtx = offScreenCanvas.getContext('2d');
-
-    // Draw the captured image data onto the off-screen canvas and resize it
-    offScreenCtx.putImageData(imgData, 0, 0);
-    offScreenCtx.drawImage(canvas, 0, 0, 64, 64);
-
-    // Get the resized image data
-    const resizedImageData = offScreenCtx.getImageData(0, 0, 64, 64);
-
+    
     // Convert the image data to a tensor and preprocess it
-    const input = tf.browser.fromPixels(resizedImageData)
+    const input = tf.browser.fromPixels(imgData)
         .toFloat()
         .div(tf.scalar(255))
         .expandDims(0); // Add a batch dimension

@@ -18,10 +18,16 @@
             align-items: center;
           
         }
-        canvas {
-            border: 1px solid #000;
+    
+        #drawingCanvas {
+            width: 320px;  /* Displayed width */
+            height: 320px; /* Displayed height */
+            image-rendering: pixelated; /* Keeps the pixels sharp */
+            border: 1px solid black; /* Optional: border for visual clarity */
         }
+
     </style>
+
       
   </head>
 
@@ -43,9 +49,14 @@
 
     <!-- Drawing screen -->
     <div class="canvas-container">
-      <canvas id="drawingCanvas" width="400" height="400" ></canvas>
+      <canvas id="drawingCanvas" width="64" height="64" ></canvas>
     </div>
     <script src="../js/draw.js"></script>
+
+    <script>
+      const canvas = document.getElementById('drawingCanvas');
+      const ctx = canvas.getContext('2d');
+  </script>
 
   </body>
 
