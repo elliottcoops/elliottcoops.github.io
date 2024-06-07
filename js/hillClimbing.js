@@ -21,19 +21,21 @@ class Search{
         // Go through each bit and if we get an improvement, accept, otherwise swap back
         let currentBestSolution = this.evaluationFunction.evaluateCurrentSolution();
         let newSolution;
-        for (let i = 0; i < 8; i++){
+        let improvement = true;
+
+        while (improvement){
             this.representation.alterSolution();
             newSolution = this.evaluationFunction.evaluateCurrentSolution();
             if (newSolution < currentBestSolution){
                 currentBestSolution = newSolution; 
+                let x = this.representation.getRepresentation();
+                let y = currentBestSolution;
+                this.updatePoint(x,y);  
             } else{
                 this.representation.getOldSolutionBack();
+                improvement = false;
             }
         }
-        // break;
-        let x = this.representation.getRepresentation();
-        let y = currentBestSolution;
-        this.updatePoint(x,y);  
     }
 
     mutation(){
