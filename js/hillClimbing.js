@@ -26,14 +26,14 @@ class Search{
             newSolution = this.evaluationFunction.evaluateCurrentSolution();
             if (newSolution < currentBestSolution){
                 currentBestSolution = newSolution; 
-                // break;
-                let x = this.representation.getRepresentation();
-                let y = currentBestSolution;
-                this.updatePoint(x,y);  
             } else{
                 this.representation.getOldSolutionBack();
             }
         }
+        // break;
+        let x = this.representation.getRepresentation();
+        let y = currentBestSolution;
+        this.updatePoint(x,y);  
     }
 
     mutation(){
@@ -47,7 +47,7 @@ class Search{
         let currentObjectiveValue = this.evaluationFunction.evaluateCurrentSolution();
         let bestObjectiveValue = this.evaluationFunction.evaluateSolution(this.representation.bestValueFound);
 
-        if (currentObjectiveValue < bestObjectiveValue){
+        if (currentObjectiveValue <= bestObjectiveValue){
             this.representation.setBestValue(this.representation.getRepresentation());
             console.log(bestObjectiveValue)
         }
@@ -131,19 +131,23 @@ class Runner {
 
     ls;
     rep;
+    eval;
 
-    constructor(ls, rep){
+    constructor(ls, rep, ev){
         this.ls = ls;
         this.rep = rep;
+        this.eval = ev
     }
 
     sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     
-    async runLocalSearch(ils){
+    async runLocalSearch(ils, chart){
         var maxIters = 100;
         var currentIter = 0;
+
+        let title = chart.options.title.text
     
         while (currentIter++ < maxIters && this.rep.getRepresentation() < domain && this.rep.getRepresentation() >= 0){
             await this.sleep(1000);
@@ -153,6 +157,9 @@ class Runner {
             }
             this.ls.firstImprovement();
             this.ls.updateBestSolution();
+
+            chart.options.title.text = title + " " + this.eval.evaluateSolution(this.rep.bestValueFound);
+            chart.update(); // Update the chart to reflect the changes
      }
     }
 }
@@ -161,11 +168,11 @@ class Runner {
 var rep = new Representation(myChart);
 var e = new EvaluationFunction(rep);
 var ls = new Search(rep, e, myChart);
-var runner = new Runner(ls, rep);
-runner.runLocalSearch(false);
+var runner = new Runner(ls, rep, e);
+runner.runLocalSearch(false, myChart);
 
 var rep2 = new Representation(myChart2);
 var e2 = new EvaluationFunction(rep2);
 var ls2 = new Search(rep2, e2, myChart2);
-var runner2 = new Runner(ls2, rep2);
-runner2.runLocalSearch(true);
+var runner2 = new Runner(ls2, rep2, e2);
+runner2.runLocalSearch(true, myChart2);

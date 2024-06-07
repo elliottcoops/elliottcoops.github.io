@@ -1,6 +1,6 @@
-const domain = 7;
-// const equation = "Math.sin(x) + Math.cos(2*x)";
-const equation = "1 / (Math.sin(x) + (0.5 * Math.sin(2*x)) + (0.25 * Math.sin(4*x)) + (0.1 * Math.pow(x,2)))"
+const domain = 10;
+const equation = "Math.sin(x) + Math.cos(2*x)";
+// const equation = "1 / (Math.sin(x) + (0.5 * Math.sin(2*x)) + (0.25 * Math.sin(4*x)) + (0.1 * Math.pow(x,2)))"
 
 class CustomChart {
     constructor(){
@@ -17,7 +17,7 @@ class CustomChart {
             this.xValues.push(x);
         }
 
-        x = 0  ; // STARTING POSITION TO BE
+        x = 1 ; // STARTING POSITION TO BE
         this.yValues2.push(eval(value));
         this.xValues2.push(x);
     }
@@ -83,10 +83,10 @@ class CustomChart {
 // Create an instance of the CustomChart class
 const customChart = new CustomChart();
 // Create the chart
-const myChart = customChart.createChart("myChart", "Local Search (Heuristic)");
+const myChart = customChart.createChart("myChart", "Local Search (Heuristic) ~ Best score: ");
 
 const customChart2 = new CustomChart();
 // Create the chart
-const myChart2 = customChart.createChart("myChart2", "Iterated Local Search (Metaheuristic)");
+const myChart2 = customChart.createChart("myChart2", "Iterated Local Search (Metaheuristic) ~ Best score: ");
 
 
