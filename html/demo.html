@@ -6,6 +6,7 @@
       <link rel="stylesheet" href="../css/nav_bar.css" />
       <link rel="stylesheet" href ="../css/demo.css">
       <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
       <script type="module" src="../js/model.js"></script>
         
     </head>
@@ -55,6 +56,39 @@
         </div>
       </div>
       <script src="../js/draw.js"></script>
+
+      <hr>
+
+      <!-- Drawing screen -->
+      <div style="display: grid; justify-items: center;">
+        <h1>Optimisation</h1>
+        <h2>Why</h2>
+        <p>A common application of optimisation is to minimise a given function - Find the lowest value in a search space</p>
+        <p>One approach is brute force, however as the search space increases, so do the number of solutions to test exponentially</p>
+        <p> We use (meta/hyper-) heuristics to attain a (approximate) solution in a reduce amount of time</p>
+
+        <h2>Problem</h2>
+        <p>Search space: 1 / (Math.sin(x) + (0.5 * Math.sin(2*x)) + (0.25 * Math.sin(4*x)) + (0.1 * Math.pow(x, 2)))</p>
+        <p>Domain: [X,N]</p>
+
+        <h2>Implementation</h2>
+        <p>Heuristic: Local search - Greedily improve the solution with no regard to future moves</p>
+        <p>Metaheuristic: Perturb and then apply Local search - Apply mutation which randomly picks a new location and then improve solution using local search</p>
+
+        <h2>Observations</h2>
+        <p> The local search heuristic will quickly get stuck in local optima - It is at the best possible solution it can reach</p>
+        <p> The iterated local search metaheuristic will visit a series local/optimal solutions and seems to perform better on this problem</p>
+        <br>
+        <br>
+
+        <div style="display: flex; height:65vh; width:65vh; gap:10vh; justify-content: center;">
+            <canvas id="myChart"></canvas>
+            <canvas id="myChart2"></canvas>
+        </div>
+      </div>
+      <br>
+      <script src="../js/generateChart.js"></script>
+      <script src="../js/hillClimbing.js"></script>
 
 
     </body>

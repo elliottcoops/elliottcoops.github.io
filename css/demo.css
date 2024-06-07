@@ -49,11 +49,11 @@ body {
   }
   
 
-  .canvas-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 #drawingCanvas {
@@ -63,9 +63,20 @@ body {
     border: 1px solid black; /* Optional: border for visual clarity */
 }
 
+#searchCanvas {
+  width: 600px;  /* Displayed width */
+  height: 400px; /* Displayed height */
+  image-rendering: pixelated; /* Keeps the pixels sharp */
+  border: 1px solid white; /* Optional: border for visual clarity */
+}
+
 .clearBtn{
   width: 160px;
   height: 50px;
   background-color: #016f9b;
   color: white;
+}
+
+canvas {
+  background-color: white;
 }
