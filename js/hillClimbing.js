@@ -158,7 +158,8 @@ class Runner {
             this.ls.firstImprovement();
             this.ls.updateBestSolution();
 
-            chart.options.title.text = title + " " + this.eval.evaluateSolution(this.rep.bestValueFound);
+            let number = this.eval.evaluateSolution(this.rep.bestValueFound);
+            chart.options.title.text = title + " " + number.toFixed(2);
             chart.update(); // Update the chart to reflect the changes
      }
     }
