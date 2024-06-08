@@ -1,21 +1,35 @@
-const domain = 10;
-const equation = "Math.sin(x) + Math.cos(2*x)";
-// const equation = "1 / (Math.sin(x) + (0.5 * Math.sin(2*x)) + (0.25 * Math.sin(4*x)) + (0.1 * Math.pow(x,2)))"
-
 class CustomChart {
 
     chart;
     title;
+    domain;
+    startX;
+    equation;
 
-    constructor() {
+    constructor(equation, domain, startX) {
         // Set x and y values of the chart
         this.xValues = [];
         this.yValues = [];
         this.xValues2 = [];
         this.yValues2 = [];
+        this.domain = domain;
+        this.startX = startX;
+        this.equation = equation;
 
         // Generate the data for the given equation in the domain [0,domain] with a step of 0.1
-        this.generateData(equation, 0, domain, 0.1);
+        this.generateData(equation, 0, this.domain, 0.1);
+    }
+
+    updateDomain(domain){ this.domain = domain;}
+
+    updateStartX(startX, y){ 
+        this.startX = startX;
+        this.updateChart(this.startX, y);
+    }
+
+    redraw(equation, canvasID){
+        this.generateData(equation, 0, this.domain, 0.1);
+        return this.createChart(canvasID, this.title);
     }
 
     getInitialPoint(){
@@ -28,17 +42,26 @@ class CustomChart {
         return points[0].x;
     }
 
+    getInitialX(){
+       return this.startX;
+    }
+
     generateData(value, i1, i2, step = 0.1) {
         // Push all values from the equation onto x and y arrays
+        this.xValues = [];
+        this.yValues = [];
+        this.xValues2 = [];
+        this.yValues2 = [];
+
         for (let x = i1; x <= i2; x += step) {
             this.yValues.push(eval(value));
             this.xValues.push(x);
         }
 
         // Set the starting position of the point 
-        x = 1 ; 
+        let x = this.startX;
         this.yValues2.push(eval(value));
-        this.xValues2.push(x);
+        this.xValues2.push(this.startX);
     }
 
     createChart(canvasID, title) {
@@ -114,6 +137,14 @@ class CustomChart {
         // Update the title with the best current score
         this.chart.options.title.text = this.title + " " + currentBestSolution.toFixed(2);
         this.chart.update(); // Update the chart to reflect the changes
+    }
+
+    reset(y){
+        let x = this.getInitialX();
+        
+        this.updateChart(x, y);
+        this.updateTitle(y);
+        this.chart.update();
     }
 }
 

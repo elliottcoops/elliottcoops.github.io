@@ -2,8 +2,15 @@ class Representation{
     
     currentSolution;
     bestValueFound;
+    domain;
 
-    constructor(initialX){
+    constructor(initialX, domain){
+        this.currentSolution = initialX;
+        this.bestValueFound = this.currentSolution;
+        this.domain = domain;
+    }
+
+    reset(initialX){
         this.currentSolution = initialX;
         this.bestValueFound = this.currentSolution;
     }
@@ -18,9 +25,8 @@ class Representation{
 
     alterSolution(){
         // Step in the positive direction
-        if (this.currentSolution < domain){
-            let step = 0.1 ;
-            this.currentSolution += step;
+        if (this.currentSolution < this.domain){
+            this.currentSolution += 0.1;
             this.roundValue();
         }
     }
@@ -28,9 +34,12 @@ class Representation{
     getOldSolutionBack(){
         // Revert back to the previous stage if there is a worse move
         if (this.currentSolution > 0){
-            let step = 0.1;
-            this.currentSolution -= step;
+            this.currentSolution -= 0.1;
             this.roundValue();
         }
     }
+
+    updateDomain(newDomain){ this.domain = newDomain;}
+
+    getDomain(){ return this.domain;}
 }

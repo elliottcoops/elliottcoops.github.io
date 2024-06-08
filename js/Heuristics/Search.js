@@ -15,7 +15,7 @@ class Search{
         let newSolution;
         let improvement = true;
 
-        while (improvement){
+        while (improvement && currentBestSolution < this.representation.getDomain()){
             this.representation.alterSolution();
             newSolution = this.evaluationFunction.evaluateCurrentSolution();
             if (newSolution < currentBestSolution){
@@ -32,8 +32,8 @@ class Search{
 
     mutation(){
         // randomly change to another point in the domain
-        let x = Math.floor(Math.random() * (domain-1));
+        let x = Math.floor(Math.random() * (this.representation.getDomain()-1));
         this.representation.setNewCurrentSolution(x);
-        this.mc.updateChart(x,eval(equation));  
+        this.mc.updateChart(x,this.evaluationFunction.evaluateCurrentSolution());  
     }
 }
