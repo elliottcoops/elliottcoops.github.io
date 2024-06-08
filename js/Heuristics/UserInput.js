@@ -1,4 +1,4 @@
-// Equations
+
 
 let equations = ["1 / (Math.sin(x) + (0.5 * Math.sin(2*x)) + (0.25 * Math.sin(4*x)) + (0.1 * Math.pow(x,2)))", 
     "Math.sin(x) + Math.cos(2*x)"
