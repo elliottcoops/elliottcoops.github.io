@@ -39,7 +39,6 @@
       <div class="description">
         <h2> How to use </h2>
         <p>Draw a character 0-9 or A-Z and let the model predict</p>
-
         <h2> Training and implementation</h2>
         <p> Trained using handwritten character dataset on kaggle using keras</p>
         <p> Model converted from keras to tensorflow js format</p>
@@ -48,6 +47,7 @@
 
       <!-- Drawing-->
       <div class="drawing">
+        <p id='predictedText'>Predicted: </p>
         <canvas id="drawingCanvas" width="64" height="64" ></canvas>
         <button onclick="clearCanvas()" class="clearBtn">Clear</button>
         <script src="../js/Character-Recognition/draw.js"></script>
