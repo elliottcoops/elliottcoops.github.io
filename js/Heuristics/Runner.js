@@ -50,9 +50,6 @@ class Runner {
 
     updateGraphics(chartController, bestVal, currentIter){
         chartController.updateTitle(bestVal);
-        let txt = 'Iteration: ' + currentIter;
-        document.getElementById('iterCount1').innerHTML = txt;
-        document.getElementById('iterCount2').innerHTML = txt;
     }
 
     reset(){

@@ -47,17 +47,68 @@
 
       <!-- Drawing-->
       <div class="drawing">
-        <p id='predictedText'>Predicted: </p>
+        <p id='predictedText'><b>Predicted: </b></p>
         <canvas id="drawingCanvas" width="64" height="64" ></canvas>
         <button onclick="clearCanvas()" class="clearBtn">Clear</button>
         <script src="../js/Character-Recognition/draw.js"></script>
       </div>
     </div>
 
+    <div class="container" style="text-align: center;">
+      <h2 class="pb-2 border-bottom" style="text-align: left;"> Optimisation</h2>
 
-    <!-- Searching -->
-    <div class="container">
-      <h2 class="pb-2 border-bottom"> Optimisation</h2>
+       <!-- Explanation -->
+       <article class="blog-post">
+        <h2 class="display-7 link-body-emphasis mb-3">Why</h2>
+        <p>A common application of optimisation is to minimise a given function - Find the lowest value in a search space.
+          One approach is brute force, however as the search space increases, so do the number of solutions to test exponentially.
+          We can use (meta/hyper-) heuristics to attain an (approximate) solution in a reduced amount of time</p>
+       </article>
+
+       <article class="blog-post">
+        <h2 class="display-7 link-body-emphasis mb-3">Problem</h2>
+        <p>Search space: Sin(x) + Cos(2x)</p>
+        <p>Domain: [X,N]</p>
+       </article>
+
+       <article class="blog-post">
+        <h2 class="display-7 link-body-emphasis mb-3">Implementation</h2>
+        <p>Heuristic: Local search - Greedily improve the solution with no regard to future moves</p>
+        <p>Metaheuristic: Perturb and then apply Local search - Apply mutation which randomly picks a new location and then improve solution using local search</p>
+       </article>
+    
+    <div class="optimisation-config">
+        <label id = 'domainSliderValue' for="domainSlider">Domain:</label>
+        <input type="range" id="domainSlider" min="5" max="50" value="">
+
+        <label id='iterSliderValue' for="iterSlider">Iterations:</label>
+        <input type="range" id="iterSlider" min="1" max="100" value="">
+
+        <label id='startSliderLabel' for="startSlider">Start X:</label>
+        <input type="range" id="startSlider" min="1" max="10" value="">
+
+        <button id = 'runBtn' onclick="changeRunState()">Start</button>
+        <button id = 'equationBtn' onclick="changeEquation()">Change problem space</button>
+
+        <div class="search-area">
+          <canvas id="myChart"></canvas>
+          <canvas id="myChart2"></canvas>
+        </div>
+      </div>
+
+      <script src="../js/Heuristics/Representation.js"></script>
+      <script src="../js/Heuristics/EvaluationFunction.js"></script>
+      <script src="../js/Heuristics/Search.js"></script>
+      <script src="../js/Heuristics/Chart.js"></script>
+      <script src="../js/Heuristics/UserInput.js"></script>
+      <script src="../js/Heuristics/Runner.js"></script>
+      <br>
+      <article class="blog-post">
+        <h2 class="display-7 link-body-emphasis mb-3">Observations</h2>
+        <p> The local search heuristic will quickly get stuck in local optima - It is at the best possible solution it can reach</p>
+        <p> The iterated local search metaheuristic will visit a series local/optimal solutions and seems to perform better on this problem</p>
+       </article>
+
     </div>
 
     </body>

@@ -28,18 +28,21 @@ function changeIters(iters) {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const slider = document.getElementById('iterSlider');
-    const sliderValue = document.getElementById('iterValue');
+    const sliderLabel = document.getElementById('iterSliderValue');
   
     // Update the displayed value when the slider is moved
     slider.addEventListener('input', function() {
+        // sliderValue.textContent = this.value;
+        sliderLabel.textContent = "Iterations: " + slider.value;
         changeIters(this.value);
+        
 
     });
   });
 
 const startingIters = 50;
-document.getElementById('mySlider').value = startingIters; 
-document.getElementById('sliderValue').innerHTML = startingIters;
+document.getElementById('iterSlider').value = startingIters; 
+document.getElementById('iterSliderValue').textContent = "Iterations: " + startingIters;;
 
 // Domain
 
@@ -55,13 +58,13 @@ function changeDomain(newDomian){
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const slider = document.getElementById('mySlider');
-    const sliderValue = document.getElementById('sliderValue');
+    const slider = document.getElementById('domainSlider');
+    const sliderLabel = document.getElementById('domainSliderValue');
   
     // Update the displayed value when the slider is moved
     slider.addEventListener('input', function() {
-      sliderValue.textContent = this.value;
-        changeDomain(this.value);
+      sliderLabel.textContent = "Domain: " + slider.value;
+      changeDomain(this.value);
 
     });
   });
@@ -69,8 +72,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // Equation and domain
 const startingDomain = 10;
 
-document.getElementById('mySlider').value = startingDomain; 
-document.getElementById('sliderValue').innerHTML = startingDomain;
+document.getElementById('domainSlider').value = startingDomain; 
+document.getElementById('domainSliderValue').textContent = "Domain: " + startingDomain;
 
 // Starting position
 function changeStartX(startX){
@@ -81,17 +84,18 @@ function changeStartX(startX){
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const slider = document.getElementById('startSlider');
-    const sliderValue = document.getElementById('startValue');
+    const sliderLabel = document.getElementById('startSliderLabel');
   
     // Update the displayed value when the slider is moved
     slider.addEventListener('input', function() {
-      sliderValue.textContent = this.value;
+      sliderLabel.textContent = "Start X: " + slider.value;
       changeStartX(this.value);
-
     });
   });
 
 const startX = 1;
 document.getElementById('startSlider').max = 10;
-document.getElementById('startValue').innerHTML = 1;
+document.getElementById('startSlider').value = startX;
+document.getElementById('startSliderLabel').textContent = "Start x: " + startX;
+
 
