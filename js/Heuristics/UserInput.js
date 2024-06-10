@@ -4,6 +4,7 @@ let equations = ["1 / (Math.sin(x) + (0.5 * Math.sin(2*x)) + (0.25 * Math.sin(4*
     "Math.sin(x) + Math.cos(2*x)"
 ]
 
+// txt 
 let displayEquations = ['1/((sin(x) + (0.5 * sin(2x)) + (0.25 * sin(4x)) + (0.1 * x^2))', 'sin(x) + cos(2x)']
 let equation = 0;
 
