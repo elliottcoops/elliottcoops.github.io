@@ -2,16 +2,16 @@
   <html lang="en">
 
     <head>
-      <title>about me</title>
+      <title>demo</title>
+      <link rel="stylesheet" href ="../css/demo.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
       <script type="module" src="../js/Character-Recognition/model.js"></script>
-        
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
 
     <body>
-
       <!-- Navigation bar -->
       <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -30,93 +30,36 @@
       </header>
     </div>
 
-      <!-- Title -->
-      
+    <!-- Character recognition -->
+    <div class="container">
+      <h2 class="pb-2 border-bottom"> Character recognition</h2>
 
-      <!-- Drawing screen -->
-      <div class="canvas-container" >
-        <div>
-          <h1>character recognition</h1>
-          <br>
-          <h2> How to use </h2>
-          <p>Draw a character 0-9 or A-Z and let the model predict</p>
-          <br>
-          <h2> Training and implementation</h2>
-          <p> Trained using ocr dataset on kaggle using keras</p>
-          <br>
-          <p> Converted model from keras to tensorflowjs</p>
-          <br>
-          <p> model can then be manipulated directly from javascript</p>
-          <br>
-        </div>
-        
-        <div style = "display: grid; justify-items: center; margin-top: 5%;" >
-          <p id="predictedText"> Prediction: </p>
-          <br>
-          <canvas id="drawingCanvas" width="64" height="64" ></canvas>
-          <br>
-          <button onclick="clearCanvas()" class="clearBtn">Clear</button>
-          <br>
-        </div>
+    <div class="character-recognition">
+      <!-- Description -->
+      <div class="description">
+        <h2> How to use </h2>
+        <p>Draw a character 0-9 or A-Z and let the model predict</p>
+
+        <h2> Training and implementation</h2>
+        <p> Trained using handwritten character dataset on kaggle using keras</p>
+        <p> Model converted from keras to tensorflow js format</p>
+        <p> Inference can therefore be carried out server side</p>
       </div>
-      <script src="../js/Character-Recognition/draw.js"></script>
 
-      <hr>
-
-      <!-- Drawing screen -->
-      <div style="display: grid; justify-items: center;">
-        <h1>Optimisation</h1>
-        <h2>Why</h2>
-        <p>A common application of optimisation is to minimise a given function - Find the lowest value in a search space</p>
-        <p>One approach is brute force, however as the search space increases, so do the number of solutions to test exponentially</p>
-        <p> We use (meta/hyper-) heuristics to attain an (approximate) solution in a reduced amount of time</p>
-
-        <h2>Problem</h2>
-        <p>Search space: Sin(x) + Cos(2x)</p>
-        <p>Domain: [X,N]</p>
-
-        <h2>Implementation</h2>
-        <p>Heuristic: Local search - Greedily improve the solution with no regard to future moves</p>
-        <p>Metaheuristic: Perturb and then apply Local search - Apply mutation which randomly picks a new location and then improve solution using local search</p>
-
-        <h2>Observations</h2>
-        <p> The local search heuristic will quickly get stuck in local optima - It is at the best possible solution it can reach</p>
-        <p> The iterated local search metaheuristic will visit a series local/optimal solutions and seems to perform better on this problem</p>
-        <br>
-        <br>
-
-        <div style="display: flex; height:5vh; width: 10vh; gap:10vh; justify-content: center;">
-          <button id = 'runBtn' onclick="changeRunState()">Start</button>
-          <button id = 'equationBtn' onclick="changeEquation()">Change problem space</button>
-        </div>
-
-        <label style = "color: white ;" for="mySlider">Domain:</label>
-        <input type="range" id="mySlider" min="5" max="50" value="">
-        <span style="color:white" id="sliderValue">50</span>
-
-        <label style = "color: white ;" for="iterSlider">Iterations:</label>
-        <input type="range" id="iterSlider" min="1" max="100" value="">
-        <span style="color:white" id="iterValue">50</span>
-
-        <label style = "color: white ;" for="startSlider">Start X:</label>
-        <input type="range" id="startSlider" min="1" max="50" value="1">
-        <span style="color:white" id="startValue">50</span>
-
-        <div style="display: flex; height:65vh; width:65vh; gap:10vh; justify-content: center;">
-            <label id = "iterCount1" style = "color: white ;" for="myChart">Iteration: 0</label>
-            <canvas id="myChart"></canvas>
-
-            <label id = "iterCount2" style = "color: white ;" for="myChart2">Iteration: 0</label>
-            <canvas id="myChart2"></canvas>
-        </div>
+      <!-- Drawing-->
+      <div class="drawing">
+        <canvas id="drawingCanvas" width="64" height="64" ></canvas>
+        <button onclick="clearCanvas()" class="clearBtn">Clear</button>
+        <script src="../js/Character-Recognition/draw.js"></script>
       </div>
-      <br>
-      <script src="../js/Heuristics/Representation.js"></script>
-      <script src="../js/Heuristics/EvaluationFunction.js"></script>
-      <script src="../js/Heuristics/Search.js"></script>
-      <script src="../js/Heuristics/Chart.js"></script>
-      <script src="../js/Heuristics/UserInput.js"></script>
-      <script src="../js/Heuristics/Runner.js"></script>
+    </div>
+
+
+    <!-- Searching -->
+    <div class="container">
+      <h2 class="pb-2 border-bottom"> Optimisation</h2>
+    </div>
+
     </body>
 
   </html>

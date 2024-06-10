@@ -1,0 +1,84 @@
+<!-- Drawing screen -->
+      <div class="canvas-container" >
+        <div>
+          <h1>character recognition</h1>
+          <br>
+          <h2> How to use </h2>
+          <p>Draw a character 0-9 or A-Z and let the model predict</p>
+          <br>
+          <h2> Training and implementation</h2>
+          <p> Trained using ocr dataset on kaggle using keras</p>
+          <br>
+          <p> Converted model from keras to tensorflowjs</p>
+          <br>
+          <p> model can then be manipulated directly from javascript</p>
+          <br>
+        </div>
+        
+        <div style = "display: grid; justify-items: center; margin-top: 5%;" >
+          <p id="predictedText"> Prediction: </p>
+          <br>
+          <canvas id="drawingCanvas" width="64" height="64" ></canvas>
+          <br>
+          <button onclick="clearCanvas()" class="clearBtn">Clear</button>
+          <br>
+        </div>
+      </div>
+      <script src="../js/Character-Recognition/draw.js"></script>
+
+      <hr>
+
+      <!-- Drawing screen -->
+      <div style="display: grid; justify-items: center;">
+        <h1>Optimisation</h1>
+        <h2>Why</h2>
+        <p>A common application of optimisation is to minimise a given function - Find the lowest value in a search space</p>
+        <p>One approach is brute force, however as the search space increases, so do the number of solutions to test exponentially</p>
+        <p> We use (meta/hyper-) heuristics to attain an (approximate) solution in a reduced amount of time</p>
+
+        <h2>Problem</h2>
+        <p>Search space: Sin(x) + Cos(2x)</p>
+        <p>Domain: [X,N]</p>
+
+        <h2>Implementation</h2>
+        <p>Heuristic: Local search - Greedily improve the solution with no regard to future moves</p>
+        <p>Metaheuristic: Perturb and then apply Local search - Apply mutation which randomly picks a new location and then improve solution using local search</p>
+
+        <h2>Observations</h2>
+        <p> The local search heuristic will quickly get stuck in local optima - It is at the best possible solution it can reach</p>
+        <p> The iterated local search metaheuristic will visit a series local/optimal solutions and seems to perform better on this problem</p>
+        <br>
+        <br>
+
+        <div style="display: flex; height:5vh; width: 10vh; gap:10vh; justify-content: center;">
+          <button id = 'runBtn' onclick="changeRunState()">Start</button>
+          <button id = 'equationBtn' onclick="changeEquation()">Change problem space</button>
+        </div>
+
+        <label style = "color: white ;" for="mySlider">Domain:</label>
+        <input type="range" id="mySlider" min="5" max="50" value="">
+        <span style="color:white" id="sliderValue">50</span>
+
+        <label style = "color: white ;" for="iterSlider">Iterations:</label>
+        <input type="range" id="iterSlider" min="1" max="100" value="">
+        <span style="color:white" id="iterValue">50</span>
+
+        <label style = "color: white ;" for="startSlider">Start X:</label>
+        <input type="range" id="startSlider" min="1" max="10" value="">
+        <span style="color:white" id="startValue">50</span>
+
+        <div style="display: flex; height:65vh; width:65vh; gap:10vh; justify-content: center;">
+            <label id = "iterCount1" style = "color: white ;" for="myChart">Iteration: 0</label>
+            <canvas id="myChart"></canvas>
+
+            <label id = "iterCount2" style = "color: white ;" for="myChart2">Iteration: 0</label>
+            <canvas id="myChart2"></canvas>
+        </div>
+      </div>
+      <br>
+      <script src="../js/Heuristics/Representation.js"></script>
+      <script src="../js/Heuristics/EvaluationFunction.js"></script>
+      <script src="../js/Heuristics/Search.js"></script>
+      <script src="../js/Heuristics/Chart.js"></script>
+      <script src="../js/Heuristics/UserInput.js"></script>
+      <script src="../js/Heuristics/Runner.js"></script>
