@@ -3,88 +3,173 @@
 
   <head>
     <title>about me</title>
-    <link rel="stylesheet" href ="../css/about.css">
-    <link rel="stylesheet" href="../css/profile_picture.css">
-    <link rel="stylesheet" href="../css/nav_bar.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="../css/profile_picture.css" rel="stylesheet">
   </head>
 
   <body>
-
     <!-- Navigation bar -->
-    <nav>
-      <div class="heading">
-        <h4>about me</h4>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../index.html">home</a></li>
-        <li><a href="../html/projects.html">projects</a></li>
-        <li><a class="active" href="about.html">about</a></li>
-        <li><a href="../html/demo.html">demo</a></li>
-        <li><a href="../html/links.html">links</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+        </div>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="../index.html" class="nav-link px-2">Home</a></li>
+          <li><a href="projects.html" class="nav-link px-2">Projects</a></li>
+          <li><a href="about.html" class="nav-link px-2 link-secondary">About</a></li>
+          <li><a href="demo.html" class="nav-link px-2">Demo</a></li>
+          <li><a href="links.html" class="nav-link px-2">Links</a></li>
+        </ul>
+      </header>
+    </div>
 
      <!-- Image -->
      <div class="image-container">
       <img class="circular-image" src="../elliott_profile.jpg" alt="insert image of me here :-/">
     </div>
 
+    <!-- Skills and expertise -->
+    <div class="container px-20 py-5" id="icon-grid">
+      <h2 class="pb-2 border-bottom">Skills and expertise</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">AI methods</h3>
+            <p>Neural networks, CNNs (ResNet, YOLOv8) and (Meta/Hyper-) heuristics</p>
+          </div>
+        </div>
 
-    <!-- Summary -->
-    <div style="display: grid; justify-items: center;">
-      <!-- Summary -->
-      <h1>summary</h1>
-      <p>I'm a third year student reading a MSci in Computer Science with Artificial Intelligence at the University of Nottingham. I’m an academically-strong team player with a passion 
-        for technology which is demonstrated through my university course, work experience and personal projects.</p> 
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">ML libraries</h3>
+            <p>TensorFlow, Keras, OpenCV, NumPy, pandas, scikit-learn and Matplotlib</p>
+          </div>
+        </div>
 
-      <!-- Skills and expertise-->
-      <h1>skills and expertise</h1>
-        <p><b>Proven</b> understanding of advanced computer vision CNNs such as YOLOv8.</p>
-        <p><b>Highly</b> skilled in Python with TensorFlow, OpenCV, NumPy, pandas, scikit-learn and Matplotlib.</p>
-        <p> <b>Skilled</b> in Java, C, Haskell, ARM assembly, Lean, PHP, HTML, JavaScript and CSS.</p>
-        <p> <b>Experience</b> working with Docker, VMs and cloud platforms including OVHcloud and AWS.</p>
-        <p> <b>Excellent</b> interpersonal skills exhibited through university group projects and summer interning.</p>
-        <p> <b>Effective</b> communicator skilled in adapting style to suit different audiences.</p>
-        <p> <b>Proficient</b> with Git, Linux, VSCode and writing unit tests and integration tests using JUnit.</p>
-        <p> <b>Knowledge</b> of Agile methodologies (Scrum, Kanban, XP), TDD, CI/CD and JIRA.</p>
-        <p> <b>Extensive</b> knowledge of SQL with experience of MySQL and SQLite.</p>
-      
-      <!-- Work experience -->
-      <h1>work experience</h1>
-      <h2> Robotica Machine Learning (Summer 2023)</h2>
-      <p>Robotica is a tech startup developing a fully automated solution for translating speech into signed languages using a realistic human avatar.
-        In summer 2023 I was invited back to undertake an R&D project investigating whether image optimisation technology could make their avatars more realistic.</p>
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Languages (advanced)</h3>
+            <p>Python, Java and C</p>
+          </div>
+        </div>
 
-      <h2>Robotica Machine Learning (Summer 2022)</h2>
-      <p>Robotica is a tech startup developing a fully automated solution for translating speech from 20 languages into signed languages using a realistic human 
-        avatar. I applied for a summer placement after completing my A-Levels and was asked to support an existing project by automating the extraction of MP3 audio
-         and transcript data from open source ebook collection, Project Gutenberg.</p>
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Languages (proficient)</h3>
+            <p>C# (Unity), SQL, Haskell, Lean, PHP and JavaScript (with HTML and CSS)</p>
+          </div>
+        </div>
 
-      <h2>Allies computing (Summer 2021)</h2>
-      <p>  Allies provides postal address lookup technology to over 9,000 businesses around the world through their API called Postcoder. I applied for a summer 
-        placement and was invited to build a proof of concept for integrating Postcoder into Amazon Alexa. <a style="color:lightseagreen;" href="https://alliescomputing.com/news/student-plugs-postcoder-into-alexa">Here's</a> 
-        the press release they wrote about it.</p>
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Data</h3>
+            <p>Image dataset curation and labelling, and relational DBs (MySQL and SQLite)</p>
+          </div>
+        </div>
 
-      <!-- Education and grades -->
-      <h1>education and grades</h1>
-      <h2>University of Nottingham (September 2022 - Present)</h2>
-      <p> <b>Year 1:</b> 89% (including 90% in ‘Fundamentals of AI’, 94% in ‘Linear Algebra’ and 97% in C programming)</p>
-      <p> <b>Year 2:</b> Grade TBD, Team leader in two different group projects</p>
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#toggles2"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Low level</h3>
+            <p>Concurrency (mutexes, semaphores and deadlocks) and networking (client/server with TCP)</p>
+          </div>
+        </div>
 
-      <h2>Sir Isaac Newton Sixth Form (September 2020 - July 2022)</h2> 
-      <p><b>Mathematics:</b> A*</p>
-      <p><b>Physics:</b> A* </p>
-      <p> <b>Computer science:</b> A</p>  
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#geo-fill"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Practices</h3>
+            <p>Agile (Scrum, Kanban, XP), TDD, CI/CD and SOLID principles</p>
+          </div>
+        </div>
 
-      <!-- Extracuricaular -->
-      <h1>extracuricaular</h1>
-      <p> <b>Bouldering -</b> Recently discovered a new passion for bouldering in the summer of 2023, climbing at centres in London and Norwich, and eager to continue pursuing it at university.</p>
-      <p> <b>Hockey -</b> Achieved competitive success from ages 10-18, participating in regional and national finals, including a memorable experience at the Olympic Stadium.</p>
-      <p> <b>Sailing -</b> Started sailing during sea scouts at age 12 and have since continued sailing a Laser Pico at a local lake. In addition, I competed in national races.</p>
-   
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#tools"></use></svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Development</h3>
+            <p>Git, Jira, VSCode, VMs, Linux, XCode, IntelliJ, Docker and AWS</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <br>
-    <br>
+
+    <!-- Experience -->
+    <div class="container" style="text-align: center;">
+      <h2 class="pb-2 border-bottom" style="text-align: left;">Experience</h2>
+        <!-- Robotica 1-->
+        <article class="blog-post">
+          <h2 class="display-7 link-body-emphasis mb-3">Junior Developer @ Robotica Machine Learning</h2>
+          <p class="blog-post-meta">Summer 2023 | Speech to sign language translation</p>
+  
+          <p>Applied computer vision techniques to enhance the realism of the company’s sign language avatars.</p>
+          <p>1. Identified deep learning project and created image dataset</p>
+          <p>2. Utilised AWS to provision resources (object storage and image registry)</p>
+          <p>3. Trained and managed resources through AWS CLI</p>
+        </article>
+
+        <!-- Robotica 2-->
+        <article class="blog-post">
+          <h2 class="display-7 link-body-emphasis mb-3">Junior Developer @ Robotica Machine Learning</h2>
+          <p class="blog-post-meta">Summer 2022 | Speech to sign language translation</p>
+  
+          <p>Curated a large dataset from Project Gutenberg (an open source ebook repo) to help train a model for lip syncing. </p>
+          <p>1. Developed a Python script to recursively traverse the repo and download MP3 audio and transcript files</p>
+          <p>2. Automated the conversion of MP3 to WAV and paired with transcripts into folders for training</p>
+        </article>
+
+        <!-- Allies 1-->
+         <article class="blog-post">
+          <h2 class="display-7 link-body-emphasis mb-3">Junior Developer @ Allies Computing</h2>
+          <p class="blog-post-meta">Summer 2021 | Predictive address autocomplete API</p>
+          <p>Integrated the company’s API product into Amazon Alexa for use by their 9,000 customers; <a href="https://alliescomputing.com/news/student-plugs-postcoder-into-alexa">press release.</a></p>
+          <p>1. Developed an interface between the API and Alexa to successfully accept and process speech input</p>
+        </article>
+        </div>
+      </div>
+
+      <!-- Grades -->
+      <div class="container">
+          <h2 class="pb-2 border-bottom">Extracurriculars</h2>
+      <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+        <div class="list-group">
+          <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Bouldering</h6>
+                <p class="mb-0 opacity-75">Discovered bouldering in 2023, visiting centres across the country.</p>
+              </div>
+            </div>
+          </a>
+          <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Hockey</h6>
+                <p class="mb-0 opacity-75">Competed from ages 10-18 in regional and national finals, including at the Olympic Stadium.</p>
+              </div>
+            </div>
+          </a>
+          <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Sailing</h6>
+                <p class="mb-0 opacity-75">Started sailing at 12 with sea scouts, now on a Laser Pico at a local lake. Competed in national regattas.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      </div>
 
   </body>
 
