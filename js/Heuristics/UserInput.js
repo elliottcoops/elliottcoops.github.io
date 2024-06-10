@@ -4,7 +4,10 @@ let equations = ["1 / (Math.sin(x) + (0.5 * Math.sin(2*x)) + (0.25 * Math.sin(4*
     "Math.sin(x) + Math.cos(2*x)"
 ]
 
+let displayEquations = ['1/((sin(x) + (0.5 * sin(2x)) + (0.25 * sin(4x)) + (0.1 * x^2))', 'sin(x) + cos(2x)']
 let equation = 0;
+
+document.getElementById('searchSpace').innerHTML = "Search space: " + displayEquations[equation]
 
 function changeEquation(){
     equation++;
@@ -16,6 +19,7 @@ function changeEquation(){
     metaheuristicChartController.redraw(equations[equation], "myChart2");
     heuristicEvaluationFunction.updateEquation(equations[equation]);
     metaheuristicEvaluationFunction.updateEquation(equations[equation]);
+    document.getElementById('searchSpace').innerHTML = "Search space: " + displayEquations[equation];
 }
 
 
@@ -55,6 +59,7 @@ function changeDomain(newDomian){
     heuristicChartController.redraw(equations[equation], "myChart");
     metaheuristicChartController.redraw(equations[equation], "myChart2");
     document.getElementById('startSlider').max = nD;
+    document.getElementById('domain').innerHTML = "Domain: " + "[0, " + newDomian + "]";
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -74,6 +79,7 @@ const startingDomain = 10;
 
 document.getElementById('domainSlider').value = startingDomain; 
 document.getElementById('domainSliderValue').textContent = "Domain: " + startingDomain;
+document.getElementById('domain').innerHTML = "Domain: " + "[0, " + startingDomain + "]";
 
 // Starting position
 function changeStartX(startX){
