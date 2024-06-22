@@ -1,46 +1,28 @@
-body {
-  margin: auto;
-  overflow: auto;
-  background-color: #022a47;
-  align-items: center;
+.image-container {
+  display: flex;
   justify-content: center;
-  min-height: 100vh;
-  font-family: 'Arial';
-  max-width: 70%;
+  gap: 10px; /* Adds space between images */
+  padding: 10px; /* Adds padding around the container */
 }
 
-  h1{
-    color: white;
-    text-transform: lowercase;
-    letter-spacing: 5px;
-    font-size: 25px;
-    /* text-decoration: underline; */
-    margin-top: 5%;
-    margin-inline-start: 2%;
-  }
+.image-container img {
+  max-width: 50%;
+  height: auto;
+  flex: 1 1 30%; /* Allows images to grow and shrink, with a base width of 30% */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
 
-  h2{
-    color: white;
-    text-transform: lowercase;
-    letter-spacing: 5px;
-    font-size: 20px;
-    /* text-decoration: underline; */
-    margin-top: 3%;
-    margin-inline-start: 2%;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .image-container img {
+      flex: 1 1 45%; /* Adjust base width for smaller screens */
   }
+}
 
-  p{
-    color: white;
-    text-transform: lowercase;
-    letter-spacing: 2px;
-    font-size: 15px;
-    margin-top: 1%;
-    margin-inline-start: 2%;
-    text-align: center;
+/* Media query for very small screens */
+@media (max-width: 480px) {
+  .image-container img {
+      flex: 1 1 100%; /* Adjust base width for very small screens */
   }
+}
 
-  .image-container{
-    margin-top: 3%;
-    display: flex;
-    gap: 5%;
-  }

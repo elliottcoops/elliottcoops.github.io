@@ -1,0 +1,36 @@
+<!-- Summary --
+
+      <!-- Neural network from scratch -->
+      <h1>MNIST-Neural-Network</h1>
+      <p>An implementation of training a neural network using backpropagation from scratch</p>
+      <br>
+      <h2>Key development features</h2>
+      <p> <b>supports any architecture:</b> the user can select any architecture, i.e. (123,2,3)</p>
+      <p> <b>tested using mnist digits:</b> the network was tested using the mnist digits dataset</p>
+      <p> <b>entirely in python:</b> the code is implemented entirely in python mainly using numpy for efficient matrix manipulation</p>
+      <br>
+
+      <h2>Training</h2>
+      
+      <p>The main training loop runs for a specified number of epochs. For each epoch, a forward pass is performed through the network to compute the weighted inputs (Z) and activations (A)
+         for each layer. The loss is then computed using the mean squared error loss function for both the training and validation datasets. Following this, a backward pass is executed to calculate
+          the gradients and update the weights of the network.</p>
+
+      <p> Backpropagation involves computing the gradients of the loss with respect to the weights. These gradients are then used to adjust the weights in the opposite direction to minimize the loss.</p>
+      
+      <br> 
+      <div class="image-container">
+        <img src="../loss.png" width="500" height="400" style="width: 100%;">
+      </div>
+
+      <h2>results</h2>
+      <div class="image-container">
+        <img src="../example.png" width="700" height="400" style="width: 100%;">
+      </div>
+
+   <br>
+
+   <!-- Summer research project (tbc) -->
+   <h1>Summer research project - Stay tuned...</h1>
+   <br>
+   </div>
