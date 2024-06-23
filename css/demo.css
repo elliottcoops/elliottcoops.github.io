@@ -7,7 +7,7 @@
 
 .drawing{
   display: grid;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 10px;
 }
@@ -34,8 +34,8 @@
 
 .optimisation-config{
   display: grid;
-  justify-content: left;
-  align-items: left;
+  justify-content: start;
+  align-items: start;
   color: black;
   gap: 2vh;
 }
@@ -43,7 +43,7 @@
 .search-area{
   display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: start;
   gap: 5vh;
   width: 40vh;
   /* height: 12vh; */
