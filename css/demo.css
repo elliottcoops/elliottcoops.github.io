@@ -1,6 +1,6 @@
 .character-recognition{
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 5vh;
 }
@@ -34,18 +34,18 @@
 
 .optimisation-config{
   display: grid;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   color: black;
   gap: 2vh;
 }
 
 .search-area{
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 5vh;
-  width: 60vh;
+  width: 40vh;
   /* height: 12vh; */
 }
 
