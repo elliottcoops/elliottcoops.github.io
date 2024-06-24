@@ -31,14 +31,15 @@
 
     <!-- Character recognition -->
     <div class="container">
-      <h2 class="pb-2 border-bottom"> Character recognition</h2>
+      <h1 class="display-1 pb-4">Demo</h1>
+      <h2 class="pb-2 pt-4 border-bottom">Character recognition</h2>
 
       <div class="character-recognition">
         <!-- Description -->
         <div class="description">
-          <h3> How to use </h3>
+          <h3 class="pb-2 pt-4">How to use</h3>
           <p>Draw a character 0-9 or A-Z and let the model predict</p>
-          <h3> Training and implementation</h3>
+          <h3 class="pb-2 pt-4">Training and implementation</h3>
           <p> Trained using handwritten character dataset on kaggle using keras</p>
           <p> Model converted from keras to tensorflow js format</p>
           <p> Inference can therefore be carried out server side</p>
@@ -52,27 +53,25 @@
           <script src="../js/Character-Recognition/draw.js"></script>
         </div>
         </div>
-    </div>
 
-    <div class="container">
-      <h2 class="pb-2 border-bottom"> Optimisation</h2>
+        <h2 class="pb-2 pt-4 border-bottom">Optimisation</h2>
 
        <!-- Explanation -->
        <article class="blog-post">
-        <h3 class="display-7 link-body-emphasis mb-3">Why</h3>
+        <h3 class="pb-2 pt-4">Why?</h3>
         <p>A common application of optimisation is to minimise a given function - Find the lowest value in a search space.
           One approach is brute force, however as the search space increases, so do the number of solutions to test exponentially.
           We can use (meta/hyper-) heuristics to attain an (approximate) solution in a reduced amount of time</p>
        </article>
 
        <article class="blog-post">
-        <h3 class="display-7 link-body-emphasis mb-3">Problem</h3>
+        <h3 class="pb-2 pt-4">Problem</h3>
         <p id="searchSpace">Search space: Sin(x) + Cos(2x)</p>
         <p id="domain">Domain: [X,N]</p>
        </article>
 
        <article class="blog-post">
-        <h3 class="display-7 link-body-emphasis mb-3">Implementation</h3>
+        <h3 class="pb-2 pt-4">Implementation</h3>
         <p>Heuristic: Local search - Greedily improve the solution with no regard to future moves</p>
         <p>Metaheuristic: Perturb and then apply Local search - Apply mutation which randomly picks a new location and then improve solution using local search</p>
        </article>
@@ -104,7 +103,7 @@
       <script src="../js/Heuristics/Runner.js"></script>
       <br>
       <article class="blog-post">
-        <h3 class="display-7 link-body-emphasis mb-3">Observations</h3>
+        <h3 class="pb-2 pt-4">Observations</h3>
         <p> The local search heuristic will quickly get stuck in local optima or is stuck because it cannot move in a single direction of improving movement</p>
         <p> The iterated local search metaheuristic will visit a series local/optimal solutions and seems to perform better on these problem spaces</p>
        </article>

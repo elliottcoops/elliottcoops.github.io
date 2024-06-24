@@ -1,13 +1,19 @@
 .image-container {
     margin-top: 1%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: Start;
 }
 
 .circular-image {
-    width: 200px; /* Adjust the width as needed */
+    width: 35%; /* Adjust the width as needed */
     height: 200px; /* Adjust the height as needed */
     border-radius: 50%;
     object-fit: cover; /* Ensures the image covers the circular area without distortion */
+  }
+
+.wrapper{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
 }
