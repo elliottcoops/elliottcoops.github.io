@@ -5,8 +5,8 @@
 }
 
 .circular-image {
-    width: 35%; /* Adjust the width as needed */
-    height: 200px; /* Adjust the height as needed */
+    width: 15vh; /* Adjust the width as needed */
+    height: 15vh; 
     border-radius: 50%;
     object-fit: cover; /* Ensures the image covers the circular area without distortion */
   }
