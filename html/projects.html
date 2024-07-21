@@ -30,70 +30,18 @@
     <h1 class="display-1 pb-4">Projects</h1>
 
     <p> A collection of my favourite projects, see my <a href="https://github.com/elliottcoops">GitHub</a> for everything.</p>
-    <h2 class="pb-2 pt-4 border-bottom">My Model Cars <small class="text-body-secondary">2nd year university group project</small></h2>
 
-    <article class="blog-post">
-      <h3 class="pb-2 pt-4">Project overview</h3>
-      <p><b>Designed an (unity driven) interactive mobile application to enhance engagement for model car collectors.</b></p>
-      <p>Implemented a machine learning system for scanning real-life model cars into the game. </p>
-      <p>Integrated a model car collection system to store virtual model cars.</p>
-      <p>Created unique 3D models for an enhanced user experience.</p>
-
-      <h3 class="pb-2 pt-4">Key responsibilities</h3>
-      <p>Team leader for the year.</p>
-      <p>Led client meetings and organised sprints and milestones using Jira.</p>
-      <p>Managed version control and collaboration with Git.</p>
-      <p>Presented the final project to academics and industry leaders.</p>
-    </article>
-
-     <h3 class="pb-2 pt-4">The game</h3>
-      <div class="image-container">
-        <figure>
-          <figcaption>Top trumps gameplay</figcaption>
-          <img src="../images/in-game.png">
-        </figure>
-
-        <figure>
-          <figcaption>Model car in collection</figcaption>
-          <img src="../images/model.png">
-        </figure>
-
-        <figure>
-          <figcaption>Model car scanner</figcaption>
-          <img src="../images/scan.png">
-        </figure>
-      </div>
-  </div>
-
-  <!-- Experience -->
-  <div class="container">
-
-    <h2 class="pb-2 pt-4 border-bottom">Matrix based neural network from scratch</h2>
-    <article class="blog-post">
-      <h3 class="pb-2 pt-4">Project overview</h3>
-      <p><b>An implementation of training a neural network using backpropagation from scratch.</b></p>
-      <p>Support for any topology of neural network (e.g. (3,32,16)).</p>
-      <p>Implemented in Python, leveraging NumPy for efficient matrix manipulation.</p>
-      <p>Tested using MNIST digit dataset.</p>
-
-      <p><b>Training loop</b></p>
-      <p>Runs for specified epochs and computes Z and A for each layer.</p>
-      <p>Calculates mean squared error loss for training and validation datasets, followed by a backward pass to update weights.</p>
-
-      <p><b>Backpropagation</b></p>
-      <p>Computes gradients of the loss with respect to weights.</p>
-      <p>Adjusts weights in the opposite direction to minimise the loss.</p>
-
-      <div class="image-container">
-        <img src="../images/loss.png">
-      </div>
-
-      <h3 class="pb-2 pt-4">Results</h3>
-      <p>Using a topology of (64,16,32,16,10) I was able to attain 97% (2 d.p) accuracy.</p>
-      <div class="image-container">
-        <img src="../images/example.png">
-      </div>
-     </article>
+    <script>
+      fetch(`https://api.github.com/repos/elliottcoops/C-NN-FromScratch/contents/README.md`) // Fetch the file from GitHub's api
+        .then(response => response.json())
+        .then(data => {
+            const content = atob(data.content); // Convert from base64 to readable text
+                  document.getElementById("readme-text").textContent = content; // Apply content to the document
+            console.log(content); // Log the content to the console
+        })
+        .catch(error => console.log(error)); // Catch any errors
+    </script>
+    
   </div>
 
   <div class="container">
