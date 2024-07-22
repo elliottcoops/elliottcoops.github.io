@@ -33,17 +33,41 @@
 
     <p>A few of my most impressive projects pulled directly from my <a href="https://github.com/elliottcoops">GitHub</a>.</p>
 
-    <div id="readme_1">Loading from GitHub...</div>
-    <div id="readme_2">Loading from GitHub...</div>
-    <div id="readme_3">Loading from GitHub...</div>
+    <div class="col-4">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action" id="rm_1" data-toggle="tab" href="#readme_1" role="tab" aria-selected="true">Loading</a>
+        <a class="list-group-item list-group-item-action" id="rm_2" data-toggle="tab" href="#readme_2" role="tab" aria-selected="true">Loading</a>
+        <a class="list-group-item list-group-item-action" id="rm_3" data-toggle="tab" href="#readme_3" role="tab" aria-="false">Loading</a>
+      </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            item.addEventListener('mouseover', function() {
+                this.className = 'list-group-item list-group-item-action active show';
+            });
+            item.addEventListener('mouseout', function() {
+                this.className = 'list-group-item list-group-item-action'; // Reset to original class
+            });
+        });
+    </script>
 
     <script>
       fetchPinnedRepos('elliottcoops').then(repos => {
         fetchReadme(repos[0].name, 'readme_1');
+        document.getElementById("rm_1").innerHTML = repos[0].name;
+
         fetchReadme(repos[1].name, 'readme_2');
+        document.getElementById("rm_2").innerHTML = repos[1].name;
+
         fetchReadme(repos[2].name, 'readme_3');
+        document.getElementById("rm_3").innerHTML = repos[2].name;
       });
     </script>
+
+    <div id="readme_1">Loading from GitHub...</div>
+    <div id="readme_2">Loading from GitHub...</div>
+    <div id="readme_3">Loading from GitHub...</div>
     
   </div>
 
