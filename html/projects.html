@@ -33,15 +33,16 @@
 
     <p>A few of my most impressive projects pulled directly from my <a href="https://github.com/elliottcoops">GitHub</a>.</p>
 
-    <div id="readme">Loading...</div>
-    <div id="readme2">Loading...</div>
+    <div id="readme_1">Loading...</div>
+    <div id="readme_2">Loading...</div>
+    <div id="readme_3">Loading...</div>
 
     <script>
-        var repo = 'C-NN-FromScratch'; // Repository name
-        fetchReadme(repo, 'readme');
-
-        repo = 'Number-Plate-Recognition'; // Repository name
-        fetchReadme(repo, 'readme2')
+      fetchPinnedRepos('elliottcoops').then(repos => {
+        fetchReadme(repos[0].name, 'readme_1');
+        fetchReadme(repos[1].name, 'readme_2');
+        fetchReadme(repos[2].name, 'readme_3');
+      });
     </script>
     
   </div>
