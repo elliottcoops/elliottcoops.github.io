@@ -93,14 +93,16 @@ async function fetchPinnedRepos(username) {
 
         if (response.ok) {
             const repos = await response.json();
-            const pinnedRepos = repos.data.user.pinnedItems.edges.map(edge => edge.node);
+            
+            // Sort repositories by stars (or any other criteria)
+            repos.sort((a, b) => b.stargazers_count - a.stargazers_count); // Example sorting by stars
 
-            // Get the top 3 repositories (already limited by the query)
-            const top3Repos = pinnedRepos.slice(0, 3);
+            // Get the top 3 repositories
+            const top3Repos = repos.slice(0, 3);
 
             return top3Repos.map(repo => ({
                 name: repo.name,
-                html_url: repo.url,
+                html_url: repo.html_url,
                 description: repo.description
             }));
         } else {
