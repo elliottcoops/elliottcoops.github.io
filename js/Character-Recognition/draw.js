@@ -102,6 +102,7 @@ async function predict() {
                 .div(tf.scalar(255))
                 .resizeBilinear([64, 64]) // Resize to the expected input shape
                 .expandDims(0); // Add a batch dimension
+                
     // Make a prediction
     const prediction = await window.myModel.predict(input).data();
     const highestValueIndex = prediction.indexOf(Math.max(...prediction));
