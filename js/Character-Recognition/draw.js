@@ -93,19 +93,19 @@ async function predict() {
         console.log("No loaded model");
     }
 
-    // Capture the canvas content
-    const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    // // Capture the canvas content
+    // const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     
-    // Convert the image data to a tensor and preprocess it
-    let input = tf.browser.fromPixels(imgData, 3) // 3 for RGB channels
-                .toFloat()
-                .div(tf.scalar(255))
-                .resizeBilinear([64, 64]) // Resize to the expected input shape
-                .expandDims(0); // Add a batch dimension
+    // // Convert the image data to a tensor and preprocess it
+    // let input = tf.browser.fromPixels(imgData, 3) // 3 for RGB channels
+    //             .toFloat()
+    //             .div(tf.scalar(255))
+    //             .resizeBilinear([64, 64]) // Resize to the expected input shape
+    //             .expandDims(0); // Add a batch dimension
                 
-    // Make a prediction
-    const prediction = await window.myModel.predict(input).data();
-    const highestValueIndex = prediction.indexOf(Math.max(...prediction));
-    document.getElementById("predictedText").innerHTML = "Predicted: " + characters[highestValueIndex];
-    console.log(characters[highestValueIndex]);
+    // // Make a prediction
+    // const prediction = await window.myModel.predict(input).data();
+    // const highestValueIndex = prediction.indexOf(Math.max(...prediction));
+    // document.getElementById("predictedText").innerHTML = "Predicted: " + characters[highestValueIndex];
+    // console.log(characters[highestValueIndex]);
 }
