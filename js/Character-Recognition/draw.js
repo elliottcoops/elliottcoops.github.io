@@ -2,8 +2,20 @@ const canvas = document.getElementById('drawingCanvas'); // Canvas reference
 const ctx = canvas.getContext('2d'); // Canvas contexr
 const scale = 320 / 64; // Scale factor between displayed size and actual canvas size
 
-ctx.fillStyle = 'white'; // Canvas fill
-ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the canvas with the white background 
+// ctx.fillStyle = 'white'; // Canvas fill
+// ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the canvas with the white background 
+
+// Create a new Image object
+const img = new Image();
+
+// Set up the callback to run when the image loads
+img.onload = function() {
+    // Draw the image onto the canvas
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+};
+
+// Set the source of the image
+img.src = '../js/Character-Recognition/image.png';  // Replace with the path to your PNG file
 
 let isDrawing = false; // Drawing flag to indicate when in box
 
@@ -107,9 +119,6 @@ async function predict() {
 
     input = input.equal(tf.scalar(1)).toFloat().mul(tf.scalar(1)); // Converts boolean mask to float and applies
     
-
-                
-
     // Make a prediction
     const prediction = await window.myModel.predict(input).data();
     const highestValueIndex = prediction.indexOf(Math.max(...prediction));

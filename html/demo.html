@@ -42,16 +42,17 @@
         <div class="description">
           <h3 class="pb-2 pt-4">How to use</h3>
           <p>Draw a character 0-9 or A/a-Z/z and let the model predict.</p>
+          <p>Click clear for erase the screen.</p>
           <h3 class="pb-2 pt-4">Training and implementation</h3>
           <p>Trained <a href="https://www.kaggle.com/code/elliottcooper/handwritten-characters">here</a> using handwritten characters dataset on kaggle.</p>
           <p>Model converted from keras to tensorflow js format.</p>
-          <p>Deployed and inferred client side</p>
-          <p>Attained test accuracy of ~80% with 62 classes</p>
+          <p>Deployed and inferred client side.</p>
+          <p>Attained test accuracy of ~80% with 62 classes.</p>
         </div>
 
         <!-- Drawing-->
         <div class="drawing">
-          <p id='predictedText'>Predicted:</p>
+          <p id='predictedText'>Predicted: B</p>
           <canvas id="drawingCanvas" width="64" height="64" ></canvas>
           <button onclick="clearCanvas()" type="button" class="btn btn-primary btn-lg" >Clear</button>
           <script src="../js/Character-Recognition/draw.js"></script>
