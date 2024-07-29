@@ -76,6 +76,7 @@ function drawLine(ctx, x1, y1, x2, y2) {
     ctx.lineTo(x2, y2);
     ctx.strokeStyle = '#000';
     ctx.lineWidth = 3;
+    ctx.globalAlpha = 1.0; // Fully opaque
     ctx.stroke();
     ctx.closePath();
 }
@@ -85,6 +86,7 @@ function clearCanvas(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
 }
 
 // Predict the character which is on the current screen
@@ -97,12 +99,17 @@ async function predict() {
     const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
     // Convert the image data to a tensor and preprocess it
-    let input = tf.browser.fromPixels(imgData, 3) // 3 for RGB channels
+    let input = tf.browser.fromPixels(imgData, 1) // 3 for RGB channels
                 .toFloat()
                 .div(tf.scalar(255))
                 .resizeBilinear([64, 64]) // Resize to the expected input shape
                 .expandDims(0); // Add a batch dimension
+
+    input = input.equal(tf.scalar(1)).toFloat().mul(tf.scalar(1)); // Converts boolean mask to float and applies
+    
+
                 
+
     // Make a prediction
     const prediction = await window.myModel.predict(input).data();
     const highestValueIndex = prediction.indexOf(Math.max(...prediction));

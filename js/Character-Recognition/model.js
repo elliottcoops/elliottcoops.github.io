@@ -6,6 +6,7 @@ async function testModel() {
         console.log('Model loaded successfully');
     } catch (error) {
         console.error('Error loading the model:', error);
+        console.log("no");
     }
 }
 
