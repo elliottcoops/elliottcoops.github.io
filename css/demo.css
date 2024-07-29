@@ -34,23 +34,23 @@
 
 .optimisation-config{
   display: grid;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
   color: black;
   gap: 2vh;
 }
 
-.search-area{
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  gap: 5vh;
-  width: 40vh;
-  /* height: 12vh; */
+.search-area {
+  display:flex;
+  gap: 2vh;
 }
 
 .search-area canvas {
   border: 1px solid black; /* Optional: Add border for visibility */
+  width: 20%;
+  max-width: 400px;
+  height: 20%;
+  max-height: 300px;
 }
 
 
