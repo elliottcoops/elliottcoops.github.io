@@ -1,0 +1,32 @@
+.nav {
+  position: fixed;
+  top: 5%;
+  left: 0;
+  right: 5%;             /* stretches to the visible width, respects scrollbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;     /* matches your content margin */
+  background-color: #0f111a;
+  z-index: 1000;
+}
+
+
+.logo {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  margin: 0;
+}
+
+.nav-right a {
+  color: #f5f5f5;
+  margin-left: 2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-right a:hover {
+  color: #25a6aa;  /* subtle accent on hover */
+}

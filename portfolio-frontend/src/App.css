@@ -1,0 +1,10 @@
+.fullpage-container {
+  height: 100vh;                 /* full screen height */
+  overflow-y: scroll;            /* enable vertical scroll */
+  scroll-snap-type: y mandatory; /* snap vertically */
+}
+
+.section {
+  height: 100vh;                 /* each section fills screen */
+  scroll-snap-align: start;      /* snap each section to top */
+}
