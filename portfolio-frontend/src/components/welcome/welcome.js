@@ -6,7 +6,7 @@ export function Welcome() {
         <div className="welcome-container">
 
             <div className="container"> 
-                <h1 className="display-4" style={{ color: '#25a6aaff' }}>
+                <h1 className="display-4" style={{ color: '#25a6aa' }}>
                     Hello, I'm Elliott
                 </h1>
 

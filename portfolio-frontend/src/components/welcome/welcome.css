@@ -2,8 +2,6 @@
   display: flex;
   align-items: center;       /* vertical alignment */
   justify-content: center;   /* center content as a whole */
-  gap: 4rem;                 /* spacing between text & image */
-  height: 100vh;             /* full screen height */
   margin: 5%;
 }
 
