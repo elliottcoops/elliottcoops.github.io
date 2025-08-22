@@ -4,10 +4,9 @@ import './experience.css';
 export function Experience() {
   const events = [
     {
-      year: "2021",
-      company: "Allies Computing",
-      description: "Integrated the company’s API product into Amazon Alexa for use by their 9,000 customers.",
-      link: "https://alliescomputing.com/news/student-plugs-postcoder-into-alexa"
+      year: "2025",
+      company: "NatWest Group",
+      description: "Designed Oracle FCL architecture diagram supporting 97% of group spend and built full-stack LLM QA internal tool."
     },
     {
       year: "2022/3",
@@ -15,10 +14,11 @@ export function Experience() {
       description: "Curated datasets for lip-sync training (2022) and enhanced sign language avatar realism with GANs (2023)."
     },
     {
-      year: "2025",
-      company: "NatWest Group",
-      description: "Designed Oracle FCL architecture diagram supporting 97% of group spend and built full-stack LLM QA internal tool."
-    }
+      year: "2021",
+      company: "Allies Computing",
+      description: "Integrated the company’s API product into Amazon Alexa for use by their 9,000 customers.",
+      link: "https://alliescomputing.com/news/student-plugs-postcoder-into-alexa"
+    },
   ];
 
   return (
