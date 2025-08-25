@@ -1,84 +1,115 @@
-/* Wrapper for timeline - vertically centred */
 .experience-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* vertical centering */
-  align-items: center;       /* horizontal centering */
-  padding: 2rem 1rem;
-  gap: 2rem;
-  width: 100%;
-  max-width: 800px;
-  min-height: 100vh;         /* take full viewport height */
-  margin: 0 auto;
   position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
 }
 
-/* Timeline vertical line */
-.experience-wrapper::before {
-  content: '';
+/* Main vertical line */
+.experience-line {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 20px;          /* position line on the left */
-  width: 4px;
-  background-color: #25a6aa;
-  border-radius: 2px;
+  left: 50%;
+  width: 3px;
+  background: #25a6aa;
+  transform: translateX(-50%);
+  opacity: 0.6;
 }
 
-/* Individual timeline entry */
+/* Each entry */
 .experience-entry {
   position: relative;
-  padding-left: 60px;
-  margin-bottom: 2rem;
+  width: 50%;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
 }
 
-/* Timeline dash */
-.experience-entry::before {
-  content: '';
+.experience-entry.left {
+  left: 0;
+  text-align: right;
+}
+
+.experience-entry.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* Dash connector — fixed, never moves */
+.experience-entry.left::before,
+.experience-entry.right::before {
+  content: "";
   position: absolute;
-  left: 8px;
-  top: 14px;           /* vertically centre the dash relative to text */
-  width: 16px;          /* length of the dash */
-  height: 4px;          /* thickness of the dash */
-  background-color: #25a6aa;
-  border-radius: 2px;
+  top: 1.5rem;
+  width: 20px;
+  height: 3px;
+  background: #25a6aa;
 }
 
-/* Job title */
-.experience-entry h3 {
-  font-size: clamp(1.1rem, 4vw, 1.4rem);
+.experience-entry.left::before {
+  right: 0;
+}
+
+.experience-entry.right::before {
+  left: 0;
+}
+
+/* Text wrapper */
+.experience-text {
+  transition: transform 0.3s ease; /* hover only affects this */
+}
+
+/* Hover effect — only text moves */
+.experience-entry:hover .experience-text {
+  transform: scale(1.03);
+}
+
+/* Text styling */
+.experience-text h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.3rem;
+  color: #fffefe;
+}
+
+.experience-text span {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #777777;
+  margin-bottom: 0.5rem;
+}
+
+.experience-text p {
   margin: 0;
-  font-weight: 600;
-}
-
-/* Company & dates */
-.experience-entry span {
-  font-size: clamp(0.9rem, 3vw, 1rem);
-  color: #878787;
-}
-
-/* Description */
-.experience-entry p {
-  font-size: clamp(0.9rem, 3vw, 1rem);
-  margin: 0.25rem 0 0 0;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: #b0b0b0;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-  .experience-wrapper::before {
-    left: 12px;
+  .experience-line {
+    left: 20px; /* timeline on left */
   }
 
   .experience-entry {
-    padding-left: 50px;
+    width: 100%;
+    padding-left: 3rem; /* space for dash + timeline */
+    text-align: left !important;
+    left: 0 !important;
   }
 
-  .experience-entry::before {
-    left: 0px;
-    top: 14px;
-    width: 12px;
+  /* Dash fixed on right side of timeline, pointing to text */
+  .experience-entry.left::before,
+  .experience-entry.right::before {
+    position: absolute;
+    top: 1.5rem;
+    left: 5px;  /* start at timeline */
+    width: 20px; /* fixed dash length */
     height: 3px;
+    background: #25a6aa;
   }
 }
+
+
+

@@ -25,13 +25,17 @@ export function Experience() {
 
   return (
     <div className="experience-wrapper">
-      {experiences.map(exp => (
-        <div key={exp.title} className="experience-entry">
-          <h3>{exp.title}</h3>
-          <span>{exp.company} | {exp.dates}</span>
-          <p>{exp.description}</p>
-        </div>
-      ))}
+  <div className="experience-line"></div>
+  {experiences.map((exp, i) => (
+    <div key={exp.title} className={`experience-entry ${i % 2 === 0 ? 'left' : 'right'}`}>
+      <div className="experience-text">
+        <h3>{exp.title}</h3>
+        <span>{exp.company} | {exp.dates}</span>
+        <p>{exp.description}</p>
+      </div>
     </div>
+  ))}
+</div>
+
   );
 }
