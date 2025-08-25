@@ -1,19 +1,42 @@
+import { useState } from 'react';
 import './nav.css';
 
-export function Nav({ title }) {
+export function Nav({ title, setCurrentPage }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pages = ["Home", "Experience", "Projects"];
+
+  const handleClick = (page) => {
+    setCurrentPage(page);    // Update App's state
+    setMenuOpen(false);      // Close menu on mobile
+  };
+
   return (
     <nav className="nav">
-      <div className="nav-left">
-        <h1 className="logo">
-          Elliott's Portfolio <span className="divider">|</span> <span className="page-title">{title}</span>
-        </h1>
-
-
+      <div className="logo">
+        {title}
       </div>
-      <div className="nav-right">
-        <a href="#Home">Home</a>
-        <a href="#Experience">Experience</a>
-        <a href="#Projects">Projects</a>
+
+      {/* Hamburger button */}
+      <div
+        className={`nav-toggle ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* Links */}
+      <div className={`nav-right ${menuOpen ? "active" : ""}`}>
+        {pages.map((page) => (
+          <a
+            key={page}
+            onClick={() => handleClick(page)}
+            className={title === page ? "active" : ""}
+          >
+            {page}
+          </a>
+        ))}
       </div>
     </nav>
   );

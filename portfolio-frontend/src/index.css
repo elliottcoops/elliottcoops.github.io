@@ -14,3 +14,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h1 {
+  color: #25a6aa; /* turquoise-ish */
+}
+
+h2 {
+  color: #ffffff; /* white */
+}
+
+p {
+  color: #b0b0b0; /* light grey */
+}

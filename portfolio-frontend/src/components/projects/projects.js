@@ -25,27 +25,23 @@ export function Projects() {
   ];
 
   return (
-    <>
-    <div className="projects-container">
-      {projects.map(project => (
-        <div key={project.name} className="project-card">
-          <h3>{project.name}</h3>
-          <p>{project.description}</p>
-          {project.image && <img src={project.image} alt={project.name} className="project-image" />}
-          {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>}
-        </div>
-      ))}
-    </div>
+    <div className="projects-container-wrapper">
+      <div className="projects-container">
+        {projects.map(project => (
+          <div key={project.name} className="project-card">
+            {project.image && <img src={project.image} alt={project.name} className="project-image" />}
+            <h1>{project.name}</h1>
+            <p style={{color:'#878787'}}>{project.description}</p>
+            {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>}
+          </div>
+        ))}
+      </div>
 
-    <table align="center">
-      <tr>
-        <td>
+      <div className="github-stats">
+        <div>
           <h3>📝 Most Used Languages</h3>
           <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=elliottcoops&layout=compact&theme=github_dark" alt="Top Languages" height="180" />
-        </td>
-      </tr>
-    </table>
-    </>
-
-  );
-}
+        </div>
+      </div>
+    </div>
+  );}

@@ -1,40 +1,6 @@
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;           /* set a fixed height */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5%;
-  background-color: #0f111a;
-  z-index: 1000;
-}
-
 .fullpage-container {
-  height: calc(100vh - 80px);   /* viewport minus nav height */
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  margin-top: 80px;             /* push container below nav */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* responsive columns */
+  grid-gap: 1rem; /* spacing between items */
+  padding-top: 80px; /* offset for navbar */
 }
-
-.section {
-  height: 100%;                 /* fill remaining container */
-  scroll-snap-align: start;
-  box-sizing: border-box;
-  padding-top: 10vh;            /* optional internal vertical spacing */
-  padding-bottom: 10vh;         /* optional bottom spacing */
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;      /* vertical centering within section */
-  align-items: center;          /* horizontal centering */
-  
-  overflow: hidden;
-}
-
-
-
-
