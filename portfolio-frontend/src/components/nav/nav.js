@@ -6,17 +6,14 @@ export function Nav({ title, setCurrentPage }) {
   const pages = ["Home", "Experience", "Projects"];
 
   const handleClick = (page) => {
-    setCurrentPage(page);    // Update App's state
-    setMenuOpen(false);      // Close menu on mobile
+    setCurrentPage(page); // now scrolls to section
+    setMenuOpen(false);
   };
 
   return (
     <nav className="nav">
-      <div className="logo">
-        {title}
-      </div>
+      <div className="logo">{title}</div>
 
-      {/* Hamburger button */}
       <div
         className={`nav-toggle ${menuOpen ? "open" : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -26,7 +23,6 @@ export function Nav({ title, setCurrentPage }) {
         <span></span>
       </div>
 
-      {/* Links */}
       <div className={`nav-right ${menuOpen ? "active" : ""}`}>
         {pages.map((page) => (
           <a

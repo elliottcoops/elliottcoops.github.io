@@ -1,15 +1,17 @@
 .fullpage-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* responsive columns */
-  grid-gap: 1rem; /* spacing between items */
+  display: flex;
+  flex-direction: column; /* stack sections vertically */
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* smooth scrolling */
   padding-top: 80px; /* offset for navbar */
 }
 
 .section {
-  padding: 6rem 1rem; /* spacing between sections */
-  min-height: 100vh;  /* full viewport height */
+  height: 100vh;  /* full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
+  scroll-snap-align: start; /* optional: snap scrolling */
 }
 
